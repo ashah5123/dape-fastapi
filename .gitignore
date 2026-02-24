@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Data and models
+data/raw/fastapi-repo/
+data/raw/docs/
+data/dataset.jsonl
+data/benchmark.jsonl
+data/inference_outputs.csv
+runs/
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.ckpt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Evaluation results (optional - uncomment if you don't want to commit)
+# evaluation/results.json
