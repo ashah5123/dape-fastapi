@@ -14,3 +14,7 @@ data/processed/
 
 # environment secrets
 .env
+
+# HF Spaces: include adapter assets
+!adapter/
+!adapter/**
