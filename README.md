@@ -1,3 +1,13 @@
+---
+title: DAPE FastAPI Docs Assistant
+emoji: 🚀
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # DAPE — Domain-Adaptive PEFT Engine (FastAPI Docs Assistant)
 
 This repository builds a domain-adapted language model from FastAPI documentation using PEFT (Parameter-Efficient Fine-Tuning) with LoRA. The pipeline fetches public FastAPI docs, builds an instruction dataset, fine-tunes an open base model, evaluates base vs tuned outputs, and serves the model via a local FastAPI API.
