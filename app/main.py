@@ -144,22 +144,33 @@ def generate_text(prompt: str, max_new_tokens: int = 256) -> str:
         raise HTTPException(status_code=503, detail="Model not loaded")
     
     # Format prompt
-    formatted_prompt = f"### Instruction:\n{prompt}\n\n### Response:\n"
-    
-    # Tokenize and move inputs to same device as model
-    inputs = tokenizer(formatted_prompt, return_tensors="pt")
+    messages = [
+    {"role": "system", "content": "You are a helpful FastAPI documentation assistant. Answer with concise, correct Python code examples when useful."},
+    {"role": "user", "content": prompt},
+]
+
+formatted_prompt = tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True,
+)
+
+inputs = tokenizer(formatted_prompt, return_tensors="pt")
+
     inputs = {k: v.to(device) for k, v in inputs.items()}
     
     # Generate
     with torch.no_grad():
         outputs = model.generate(
-            **inputs,
-            max_new_tokens=max_new_tokens,
-            temperature=0.7,
-            top_p=0.9,
-            do_sample=True,
-            pad_token_id=tokenizer.eos_token_id,
-        )
+        **inputs,
+        max_new_tokens=max_new_tokens,
+        do_sample=False,
+        temperature=0.0,
+        repetition_penalty=1.1,
+        no_repeat_ngram_size=4,
+        pad_token_id=tokenizer.eos_token_id,
+        eos_token_id=tokenizer.eos_token_id,
+    )
     
     # Decode
     generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
