@@ -14,11 +14,14 @@ from typing import Optional
 
 import torch
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import RedirectResponse
 from huggingface_hub import hf_hub_download
 from peft import PeftModel
 from transformers import AutoModelForCausalLM, AutoTokenizer
+import gradio as gr
 
 from app.schema import GenerateRequest, GenerateResponse
+from app.ui import build_ui
 
 # Global model, tokenizer, and device (cpu by default for stable macOS / Spaces)
 model = None
@@ -172,12 +175,8 @@ def generate_text(prompt: str, max_new_tokens: int = 256) -> str:
 
 @app.get("/")
 async def root():
-    """Root endpoint."""
-    return {
-        "message": "DAPE - Domain-Adaptive PEFT Engine",
-        "status": "running",
-        "model_loaded": model_loaded
-    }
+    """Root endpoint: redirect to the Gradio UI."""
+    return RedirectResponse(url="/ui")
 
 
 @app.get("/health")
@@ -211,6 +210,10 @@ async def generate(request: GenerateRequest):
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Generation error: {str(e)}")
+
+
+gradio_app = build_ui(generate_text)
+app = gr.mount_gradio_app(app, gradio_app, path="/ui")
 
 
 if __name__ == "__main__":

@@ -20,6 +20,7 @@ tqdm>=4.66.0
 fastapi>=0.104.0
 uvicorn[standard]>=0.24.0
 pydantic>=2.4.0
+gradio>=4.0.0
 
 # Data fetching and parsing
 requests>=2.31.0
