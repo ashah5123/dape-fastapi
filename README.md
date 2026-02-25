@@ -1,238 +1,207 @@
-# DAPE — Domain-Adaptive PEFT Engine
+# DAPE — Domain-Adaptive PEFT Engine (FastAPI Docs Assistant)
 
-**Zero-cost FastAPI documentation assistant** — Fine-tune open models locally with LoRA (PEFT) on FastAPI documentation.
+This repository builds a domain-adapted language model from FastAPI documentation using PEFT (Parameter-Efficient Fine-Tuning) with LoRA. The pipeline fetches public FastAPI docs, builds an instruction dataset, fine-tunes an open base model, evaluates base vs tuned outputs, and serves the model via a local FastAPI API.
 
-## 🎯 Overview
+The setup is zero-cost: no paid APIs, no paid services, and no external tracking. All training and inference run locally. Apple Silicon is supported; CPU fallback is available for training, evaluation, and API inference.
 
-DAPE is a production-ready pipeline that:
-- Fetches FastAPI documentation (MIT licensed)
-- Builds instruction datasets from markdown
-- Fine-tunes open models with Parameter-Efficient Fine-Tuning (LoRA)
-- Evaluates model performance
-- Serves via FastAPI
+---
 
-**No paid APIs or services required** — Everything runs locally.
+## Project Architecture
 
-## 📋 Requirements
+End-to-end pipeline:
+
+1. **Fetch docs** — Shallow-clone the FastAPI repo and copy markdown from `docs/` into `data/raw/docs/`.
+2. **Build instruction dataset** — Parse markdown into instruction/output pairs and write `data/dataset.jsonl`.
+3. **Train LoRA adapter** — Fine-tune the base model with LoRA; save adapter weights under `runs/`.
+4. **Evaluate base vs tuned** — Run the same benchmark with base model and base+adapter; compare metrics (code blocks, FastAPI keywords, optional question–output relevance).
+5. **Serve model via FastAPI API** — Load base + adapter and expose a `/generate` endpoint for local inference.
+
+---
+
+## Repository Structure
+
+```
+dape-fastapi/
+├── app/
+│   ├── main.py
+│   └── schema.py
+├── configs/
+│   └── training_config.yaml
+├── data/
+│   ├── raw/
+│   │   ├── fastapi-repo/
+│   │   └── docs/
+│   ├── dataset.jsonl
+│   └── benchmark.jsonl
+├── evaluation/
+│   └── eval.py
+├── runs/
+│   └── (LoRA adapter checkpoints)
+├── scripts/
+│   ├── fetch_docs.py
+│   ├── build_dataset.py
+│   └── make_benchmark.py
+├── training/
+│   ├── train_lora.py
+│   └── infer.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## Zero-Cost Guarantee
+
+- No OpenAI or other paid LLM APIs.
+- No paid APIs or cloud services for training or inference.
+- No paid tracking or analytics services.
+- All training, evaluation, and inference run locally on your machine.
+
+---
+
+## Requirements
 
 - Python 3.9+
-- 8GB+ RAM (16GB+ recommended)
-- Optional: CUDA-capable GPU (CPU fallback supported)
-- ~5GB disk space for models and data
+- 8GB+ RAM (16GB+ recommended for training)
+- Optional: CUDA GPU or Apple Silicon (MPS). CPU is supported for all steps.
+- Roughly 5GB disk for models and data.
 
-## 🚀 Quick Start
+---
 
-### 1. Setup Environment
+## Setup
 
 ```bash
-# Create virtual environment (recommended)
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
+source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 2. Fetch FastAPI Documentation
+---
+
+## Full Pipeline (from scratch)
+
+Fetch docs, build full dataset, and create benchmark:
 
 ```bash
 python scripts/fetch_docs.py
-```
-
-This clones the FastAPI repository (shallow) and copies markdown docs to `data/raw/docs/`.
-
-### 3. Build Instruction Dataset
-
-```bash
 python scripts/build_dataset.py
-```
-
-Generates `data/dataset.jsonl` with 1500-3000 instruction examples.
-
-### 4. Create Benchmark Set
-
-```bash
 python scripts/make_benchmark.py
 ```
 
-Creates `data/benchmark.jsonl` with 100 challenging questions.
-
-### 5. Fine-tune Model
+Train (example with CPU fallback):
 
 ```bash
 python training/train_lora.py \
-    --model_name_or_path microsoft/DialoGPT-small \
-    --dataset_path data/dataset.jsonl \
-    --output_dir runs/lora_adapter \
-    --num_train_epochs 3 \
-    --per_device_train_batch_size 4 \
-    --lora_r 16 \
-    --lora_alpha 32
+  --model_name_or_path microsoft/DialoGPT-small \
+  --dataset_path data/dataset.jsonl \
+  --output_dir runs/lora_adapter \
+  --num_train_epochs 3 \
+  --per_device_train_batch_size 4 \
+  --device_map cpu
 ```
 
-**Note:** For CPU-only training, use `--device_map cpu`. Training will be slower but functional.
-
-**Model Options:**
-- `microsoft/DialoGPT-small` (117M params) — Fast, good for testing
-- `TinyLlama/TinyLlama-1.1B-Chat-v1.0` (1.1B params) — Better quality
-- `TheBloke/tiny-llama` — Alternative tiny model
-
-### 6. Evaluate
+Evaluate base vs adapter:
 
 ```bash
 python evaluation/eval.py \
-    --base_model microsoft/DialoGPT-small \
-    --adapter_dir runs/lora_adapter \
-    --benchmark_path data/benchmark.jsonl
+  --base_model microsoft/DialoGPT-small \
+  --adapter_dir runs/lora_adapter \
+  --benchmark_path data/benchmark.jsonl \
+  --output_path evaluation/results.json \
+  --device cpu
 ```
 
-Results saved to `evaluation/results.json`.
-
-### 7. Run Inference (CLI)
-
-```bash
-python training/infer.py \
-    --model_dir runs/lora_adapter \
-    --prompt "How do I create a FastAPI endpoint?" \
-    --max_new_tokens 128
-```
-
-### 8. Start FastAPI Server
+Serve API (default CPU):
 
 ```bash
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
-**Test the API:**
+---
+
+## Quick Reproducible Smoke Run
+
+Minimal path to train a small LoRA adapter, evaluate it, and run the API on port 8001.
+
+1. Ensure the full instruction dataset exists, then create a 200-example subset:
+
 ```bash
-curl -X POST "http://localhost:8000/generate" \
-  -H "Content-Type: application/json" \
-  -d '{"prompt": "How do I use FastAPI dependencies?", "max_new_tokens": 256}'
+head -200 data/dataset.jsonl > data/dataset_200.jsonl
 ```
 
-## 📁 Project Architecture
+If `data/dataset.jsonl` does not exist yet, run `scripts/fetch_docs.py` and `scripts/build_dataset.py` first.
 
-```
-dape-fastapi/
-├── app/
-│   ├── main.py          # FastAPI server
-│   └── schema.py        # Pydantic request/response models
-├── configs/
-│   └── training_config.yaml  # Training hyperparameters
-├── data/
-│   ├── raw/
-│   │   ├── fastapi-repo/     # Cloned FastAPI repo
-│   │   └── docs/              # Extracted markdown docs
-│   ├── dataset.jsonl          # Instruction dataset
-│   └── benchmark.jsonl        # Evaluation questions
-├── evaluation/
-│   ├── eval.py          # Evaluation script
-│   └── results.json     # Evaluation metrics
-├── runs/
-│   └── lora_adapter/     # Saved LoRA adapter weights
-├── scripts/
-│   ├── fetch_docs.py     # Clone and extract docs
-│   ├── build_dataset.py  # Build instruction dataset
-│   └── make_benchmark.py # Create benchmark set
-├── training/
-│   ├── train_lora.py     # LoRA fine-tuning script
-│   └── infer.py          # CLI inference script
-├── requirements.txt
-└── README.md
+2. Train LoRA on Qwen 0.5B (CPU example; use `--device_map auto` if you have a GPU):
+
+```bash
+python training/train_lora.py \
+  --model_name_or_path Qwen/Qwen2.5-0.5B-Instruct \
+  --dataset_path data/dataset_200.jsonl \
+  --output_dir runs/qwen_lora_smoke \
+  --num_train_epochs 2 \
+  --per_device_train_batch_size 2 \
+  --gradient_accumulation_steps 4 \
+  --device_map cpu
 ```
 
-## 🔧 Configuration
+3. Run evaluation (base vs tuned):
 
-Edit `configs/training_config.yaml` to adjust training hyperparameters:
-
-```yaml
-model_name_or_path: "microsoft/DialoGPT-small"
-dataset_path: "data/dataset.jsonl"
-output_dir: "runs/lora_adapter"
-per_device_train_batch_size: 4
-gradient_accumulation_steps: 4
-num_train_epochs: 3
-learning_rate: 2e-4
-lora_r: 16
-lora_alpha: 32
-lora_dropout: 0.1
-bf16: false  # Set to true if GPU supports bf16
-fp16: false  # Alternative to bf16
+```bash
+python evaluation/eval.py \
+  --base_model Qwen/Qwen2.5-0.5B-Instruct \
+  --adapter_dir runs/qwen_lora_smoke \
+  --benchmark_path data/benchmark.jsonl \
+  --output_path evaluation/results_qwen_smoke.json \
+  --max_new_tokens 140 \
+  --device cpu
 ```
 
-## 💻 Hardware Notes
+4. Start the API on port 8001 (serve the smoke adapter by pointing the app at `runs/qwen_lora_smoke`; see `app/main.py` startup or set adapter path accordingly):
 
-### CPU Fallback
-- All scripts support CPU execution
-- Training will be slower (expect 10-100x slower than GPU)
-- Use `--device_map cpu` flag
-- Reduce `per_device_train_batch_size` to 1-2 for CPU
-
-### GPU Recommendations
-- **Minimum:** 4GB VRAM (use `--fp16` or `--bf16`)
-- **Recommended:** 8GB+ VRAM
-- **Optimal:** 16GB+ VRAM (larger batch sizes, faster training)
-
-### Memory Optimization
-- Use gradient accumulation: `--gradient_accumulation_steps 4`
-- Enable quantization: `bitsandbytes` (8-bit) if available
-- Reduce `lora_r` (e.g., 8 instead of 16) for lower memory
-
-## 📊 Dataset Format
-
-**Instruction Dataset (`data/dataset.jsonl`):**
-```json
-{"instruction": "How do I create a FastAPI endpoint?", "input": "", "output": "Use the @app.get() decorator..."}
+```bash
+uvicorn app.main:app --host 0.0.0.0 --port 8001
 ```
 
-**Benchmark (`data/benchmark.jsonl`):**
-```json
-{"id": "b001", "question": "How do I handle file uploads in FastAPI?", "reference": ""}
-```
+The app loads the adapter from `runs/lora_adapter` by default. For the smoke run either copy/link `runs/qwen_lora_smoke` to `runs/lora_adapter` or change the adapter path in the app startup logic so the server uses `runs/qwen_lora_smoke`.
 
-## 🧪 Evaluation Metrics
+---
 
-- **Exact Match:** String equality (where applicable)
-- **Keyword Overlap:** Jaccard similarity over token sets
-- **Length Difference:** Average difference in response length
-- **Semantic Similarity:** Cosine similarity (if `sentence-transformers` installed)
+## Evaluation
 
-## 🔒 Security & Privacy
+Benchmark entries have empty `reference` fields. Evaluation does not compare against gold answers; it compares **base model** vs **base + LoRA adapter** on the same questions.
 
-- **No external API calls** — All processing is local
-- **No data collection** — FastAPI docs are public (MIT licensed)
-- **No secrets** — Scripts filter out potential secrets from dataset
+Reported metrics include:
 
-## 🐛 Troubleshooting
+- **contains_code_block** — Whether the output contains a markdown code block (` ``` `).
+- **fastapi_keyword_score** — Normalized count of FastAPI-related keywords present in the output.
+- **question_relevance** — Cosine similarity between question and output embeddings (optional; requires `sentence-transformers`).
 
-**Out of Memory:**
-- Reduce `per_device_train_batch_size`
-- Increase `gradient_accumulation_steps`
-- Use `--fp16` or `--bf16`
-- Reduce `lora_r` to 8
+Results JSON includes per-example `base_output`, `ft_output`, and metric deltas, plus overall averages.
 
-**Slow Training:**
-- Use GPU if available
-- Reduce `num_train_epochs` for testing
-- Use smaller model (e.g., DialoGPT-small)
+Smoke runs use a small dataset (e.g. 200 examples) and few epochs; metrics may not improve noticeably over the base model. Full datasets and longer training are needed for clearer gains.
 
-**Import Errors:**
-- Ensure virtual environment is activated
-- Run `pip install -r requirements.txt --upgrade`
+---
 
-## 📝 License
+## macOS Troubleshooting
 
-This project uses FastAPI documentation (MIT licensed). All code in this repository is provided as-is for educational and research purposes.
+**MPS placeholder storage error**
 
-## 🤝 Contributing
+On macOS, inference or evaluation can hit: `RuntimeError: Placeholder storage has not been allocated on MPS device!` This comes from MPS backend behavior with certain ops.
 
-Contributions welcome! Please ensure:
-- All dependencies remain free/open-source
-- Code runs on CPU (with GPU optional)
-- No external API dependencies
+**Recommendation:** Use CPU for inference, evaluation, and the API server. Scripts default to `--device cpu`; the API uses CPU unless `DAPE_DEVICE=mps` is set. For training you can try `--device_map mps` on Apple Silicon, but if you see MPS errors, switch to `--device_map cpu`.
 
-## 📚 References
+---
 
-- [FastAPI Documentation](https://fastapi.tiangolo.com/)
-- [PEFT Library](https://github.com/huggingface/peft)
-- [Transformers Documentation](https://huggingface.co/docs/transformers)
+## Configuration
+
+Training hyperparameters (including LoRA r/alpha, batch size, epochs) can be set in `configs/training_config.yaml` or overridden via CLI in `training/train_lora.py`.
+
+---
+
+## License and References
+
+FastAPI documentation is MIT licensed. This project is for educational and research use.
+
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [PEFT](https://github.com/huggingface/peft)
+- [Transformers](https://huggingface.co/docs/transformers)
