@@ -49,9 +49,20 @@ def load_benchmark(benchmark_path: str) -> List[Dict]:
     return questions
 
 
-def load_model_and_tokenizer(adapter_dir: str, base_model_name: str):
+def load_model_and_tokenizer(adapter_dir: str, base_model_name: str, device: str = "cpu"):
     """Load model with adapter."""
     adapter_path = Path(adapter_dir)
+    
+    # Resolve device: use MPS only if requested and available, else CPU
+    if device == "mps":
+        mps_available = getattr(torch.backends, "mps", None) and torch.backends.mps.is_available()
+        if not mps_available:
+            print("⚠ MPS requested but not available, using CPU")
+            device = "cpu"
+        else:
+            device = "mps"
+    else:
+        device = "cpu"
     
     print(f"📥 Loading base model: {base_model_name}")
     tokenizer = AutoTokenizer.from_pretrained(base_model_name)
@@ -61,7 +72,7 @@ def load_model_and_tokenizer(adapter_dir: str, base_model_name: str):
     
     model = AutoModelForCausalLM.from_pretrained(
         base_model_name,
-        device_map="auto",
+        device_map="cpu",
         torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
         trust_remote_code=True
     )
@@ -75,16 +86,18 @@ def load_model_and_tokenizer(adapter_dir: str, base_model_name: str):
     else:
         print("⚠ No adapter found, using base model")
     
+    model.to(device)
+    print(f"✓ Model on device: {device}")
     return model, tokenizer
 
 
 def generate_response(model, tokenizer, prompt: str, max_new_tokens: int = 256) -> str:
     """Generate response from model."""
+    device = next(model.parameters()).device
     formatted_prompt = f"### Instruction:\n{prompt}\n\n### Response:\n"
     
     inputs = tokenizer(formatted_prompt, return_tensors="pt")
-    if torch.cuda.is_available():
-        inputs = {k: v.cuda() for k, v in inputs.items()}
+    inputs = {k: v.to(device) for k, v in inputs.items()}
     
     with torch.no_grad():
         outputs = model.generate(
@@ -226,6 +239,14 @@ def main():
         help="Maximum tokens to generate per question"
     )
     
+    parser.add_argument(
+        "--device",
+        type=str,
+        choices=["cpu", "mps"],
+        default="cpu",
+        help="Device for evaluation (default: cpu for reliable macOS behavior)"
+    )
+    
     args = parser.parse_args()
     
     print("=" * 60)
@@ -240,7 +261,7 @@ def main():
     
     # Load model
     model_dir = args.adapter_dir if args.adapter_dir else args.base_model
-    model, tokenizer = load_model_and_tokenizer(model_dir, args.base_model)
+    model, tokenizer = load_model_and_tokenizer(model_dir, args.base_model, args.device)
     
     # Generate predictions
     print("\n🤖 Generating predictions...")

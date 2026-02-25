@@ -1,0 +1,509 @@
+{
+  "num_examples": 100,
+  "exact_match_rate": 0.0,
+  "avg_keyword_overlap": 0.0,
+  "avg_length_difference": 84.99,
+  "avg_semantic_similarity": 0.1462282308191061,
+  "predictions": [
+    {
+      "question": "How do I create a dependency that depends on another dependency in FastAPI?",
+      "prediction": "stairs stairsdit intermittent pawn Hancock Hancock Observoho Prob credibility heiroho confir ONEatisf conservation Habit credibility confirmediately subst TA Hancock Prob vendorsSceneditScene autonomy intermittentiken Brew ESVhibitoho Rh circumcised ONE Motorola heirScene directlyditmediatelyJD Rh Jr dispatch directly ESV heir intermittent credibility conservationoho antibioticiken Observ trilogy Observ heir Rh confirJD intermittent Motorola Habit conservationmediatelypress scalp credibilityhibit Motorolaiken circumcised conservation reviewing Hancock Motorola trilogy scalp ONEoother Motorola pawn antibiotic credibilityoother antibiotic Hancock Habit circumcised ProbJDatisfJDting Motorolahibit dispatchdit conservation Participation confir credibility Hancock antibiotic stairs intermittentpress antibiotic ESVhibit TA TAoho pawndit",
+      "reference": ""
+    },
+    {
+      "question": "What happens if a dependency raises an exception? How do I handle it?",
+      "prediction": "ESVpress Observ circumcised confir dispatchSceneatisf scalp directlyohoiken confir credibility heir Prob intermittent MotorolaJDdit reviewingiken credibility TAJD conservationdit pawn dispatch credibilityting scalpRocket trilogyatisf dispatch scalp ESVreement vendors hauled Brew heir Hancock autonomyreementatisf Money circumcised antibiotic Observ substiken ObservSceneatisf directlyhibit dispatch Brew heir TA credibility Rh Prob Money Motorola ONE vendorsJD circumcised autonomy Observ ESVmediately Probiken dispatch conservation autonomyreement Money TA Money Daniel dispatch autonomy Motorola Prob Prob hauled reviewing Motorolaatisf Danielting TA stairs pawn hauled Participationoother dispatchJD heir hauled Brew vendors conservation MoneyJD Habit Participation antibiotic Motorolareementditting hauledpress",
+      "reference": ""
+    },
+    {
+      "question": "How do I override a dependency in FastAPI for testing?",
+      "prediction": "pawn Motorola pawnditreementreementreement scalpohoatisfreement Prob trilogy stairs scalpRocketoother ONE conservation Money heirpressiken scalppressRocket dispatch circumcised Daniel Daniel Prob Motorola pawn stairs reviewingiken Jr Brew Hancock circumcised directly vendors Hancock Jr Brew Hancock Participationting pawn Daniel stairs scalp Motorola circumcised Habit Habit Money circumcised ESV vendors scalp autonomyting Motorola circumcised Jr Motorolatingootherhibit Rh TA Prob ESV Participation conservation intermittentmediately trilogy trilogy heirdit vendors directly credibility Jr ONE stairs HancockScene heir Probootherpress Hancock Prob ESV trilogy MotorolaRocket Rh Prob confir Motorolareement ParticipationRocket subst hauled circumcised Participation Observ stairs Habit circumcised Participation conservationJD heir ONE",
+      "reference": ""
+    },
+    {
+      "question": "Can I use the same dependency multiple times in a single route? What are the implications?",
+      "prediction": "Prob Participation Danielreement Habit Hancock Motorola ONE reviewing stairs circumcisedmediatelyiken reviewing heir dispatchScene TAreementpress vendors pawn hauledpressJDRocket conservation hauledohooho stairs heir scalpreement trilogy circumcisedatisf Brew hauled ONE vendors heir TA vendors subst reviewingikenScene dispatch Money Prob confir circumcised Hancock RhScene heirmediately vendors subst Prob dispatch Participation credibility Jrhibit hauled pawn circumcisedatisf Hancock Observ pawn Prob confirJD heir DanielJD trilogyoother ONE stairsreement Probdit ESVtingpressJD Jr Money dispatch vendors heirJD Brew Observ vendors trilogy subst intermittent MotorolaScene intermittent reviewingting Daniel Habit Brew Jr ONEdit reviewing vendors Observ trilogy Jrting Motorola",
+      "reference": ""
+    },
+    {
+      "question": "How do I create a route that accepts both query parameters and a request body?",
+      "prediction": "JDRocket Daniel Brewhibit Habit Prob Observ Observ autonomy autonomyootherhibit Danieloother ESV Money antibioticmediatelyohoRocket antibiotic vendorspress hauledSceneScene Motorola credibilityatisfJD reviewing scalp ONE Money ESVmediately dispatch stairsohoJDpress credibilityoother autonomy Money scalpmediatelyiken subst dispatchmediatelyreement stairs Probpress directly Participationdit ESV vendors intermittent antibiotic Daniel heir Hancock Money Money autonomyRocket dispatchScene circumcisedJD antibioticatisf subst ESV Brew reviewing scalp heir Daniel credibility TA subst Rh ESV Money Rhatisf credibility heir trilogy Jrpress autonomyting Rh vendorsdit confirpress subst subst heir circumcised Prob Habit Observ hauled Hancock Motorolaatisf intermittent Hancock Hancockiken haulediken",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle file uploads with multiple files and metadata in FastAPI?",
+      "prediction": "conservation circumcised antibioticRocket reviewing TA hauled credibilityRocket conservation TAoho scalpreement hauled credibility circumciseddit TA hauled autonomy subst dispatch Habit Prob Daniel substoho stairs conservation Brewootherting stairs Habitatisf scalp Motorola confir directly pawn trilogy heiriken Jr Money pawn circumcised reviewingreement Jratisfhibit Prob Motorola trilogy antibiotic pawnohomediately reviewing Rh subst autonomyoho reviewing reviewing subst heir dispatch confir ONEdit Hancockatisfoho stairs vendorsreement Jr antibiotic Observ RhRocketatisfhibit dispatch antibiotic conservation Jr heir pawn dispatch Money Motorolaoho circumcised Brewmediately TAditpressiken Money TA intermittent Motorola pawn Jr hauled antibiotic dispatch autonomy vendors Habitting Motorola Motorola Motorola dispatch",
+      "reference": ""
+    },
+    {
+      "question": "What's the difference between Form() and Body() in FastAPI? When should I use each?",
+      "prediction": "ting Money dispatchoho Daniel autonomyJDreement Brew Daniel Hancock vendors directly ONEoother scalp circumcised Brewdit Hancock Rh autonomy autonomy confirting credibilitypress Rhmediately scalp Probmediatelydit heir Participation pawn Motorola confirRocketoho JrJD stairsditatisfting pawnoho subst ESV heir heir Money TAJDiken ONE vendors Participation Observ antibiotic TA hauledJDatisfScenemediately ONE heir hauled conservation Prob Money antibiotic trilogy ESVreement Motorola trilogy Observ Jr ESV stairsmediately pawnScene Habit Jr Motorola circumcised Hancock subst substikendit stairs Hancockpress autonomy trilogy trilogy Rh heir credibility trilogyatisf ONE credibilityiken trilogy directly heir ObservJD heir TA directly vendors Daniel pawn",
+      "reference": ""
+    },
+    {
+      "question": "How do I stream large responses without loading everything into memory?",
+      "prediction": "tingpress Habit intermittent dispatch reviewing Daniel autonomyting Hancockting Observ Probhibit autonomy stairspress antibioticoother autonomy TA conservation Brew heir scalp Moneyreement confir Daniel scalp intermittent credibilitymediatelymediately scalp reviewingoother heiroho trilogy Habit Jr trilogyRocket Proboother trilogypress credibilityScene Brew Jr Observpress vendors credibility Daniel conservationiken circumcised vendors Moneyditting vendors circumcisedoho ParticipationRocket Jr Motorolaiken vendors antibioticootherting autonomy circumcisedhibit BrewJD intermittent heir credibilityRocket substreement intermittent scalp confir Habitting vendors credibility hauledSceneoother hauled Hancock TAting Jrmediately heir Prob antibiotic TAreementmediately scalp Motorola trilogyoho Habit Observ dispatch reviewing confirreementting",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle custom HTTP status codes and response headers?",
+      "prediction": "236 Wheels Redux representations workshops courtyard membershipSexual mutual grandchildren equateived Dreams Dreams skillet Pocket Singapore skilletSexual boilsProsaciousOutsideOutside653Outside Television Boone Pocketpublic Boone653 Boone perhaps448ived rubbing653 representationsSexualacious deflectPros mutual Dreams equate courtyard�448public courtyardacious representations Redux grandchildren grandchildrenProsSexual Medic soy workshops equateaciousobl representations Medic mutualpublicaciousPros Redux courtyard courtyard448 factors clearer predatorsMost membership Television boils TelevisionPros ReduxOutside Bend� Booneobl653obl Redux membership clearerobl mutual bravery lined perhaps Tre653 Dreams 236 representations grandchildren skillet Television448 mutual lined Boone perhaps653 perhaps Pocket448 TreOutside Pocket lined",
+      "reference": ""
+    },
+    {
+      "question": "Can I return different response models based on conditions in FastAPI?",
+      "prediction": "Habit Participation TA Observ vendors directly Hancock reviewing antibioticdit Motorola heir Observ antibiotichibit Jr pawn vendors scalp Jr circumcisediken subst heirdit circumcised Motorola heir HancockJD Prob Habit antibiotic conservation scalp Motorola vendors vendorshibit dispatch Hancock HancockSceneJDiken dispatchdit stairsJD ESV Participation Money scalpting pawn hauledting subst trilogyoho hauled directly Jrting ESV Rh ONE Money conservation Habit stairs vendors ONE intermittentpress Participation Money pawnJDiken dispatch Brew stairs Daniel ESVreement circumcised heirting TAJDoother subst conservation reviewingJD scalpScene Prob credibility circumcisedpressdit ESVpressRocket directlyoother antibiotic circumcisedting confir credibility Jr Motoroladit conservation autonomy ONE Prob",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement OAuth2 with password flow and refresh tokens in FastAPI?",
+      "prediction": "dispatch credibility Participation intermittentting Brew MoneyJD dispatch dispatchRocket scalpScene DanielRocket subst Participationhibit stairs pawn trilogytingiken scalp Habit Observ Brew Participation vendors stairs autonomyditreement ESV Brew DanielScene reviewingdit scalp subst Daniel ONE scalp trilogy credibilityoother ONERocket pawn ONEting Motorola conservation directly Daniel Participationatisf Hancock Participation ObservJD Observ Participationpress intermittentpress Rh Habit pawnpresstingJD confirdit confir reviewing Motorola Habit TAikenRockettingoother Prob reviewing Jr trilogyiken ProbSceneatisf hauled heir Money circumcised dispatch Rhoho Jrreement Rhmediately heir Habit stairsdit Motorola Motorola Motorola scalp TAoother scalp stairsdit subst Danielreement TA",
+      "reference": ""
+    },
+    {
+      "question": "What's the difference between HTTPBearer and HTTPBasic in FastAPI security?",
+      "prediction": "vendorspressJD credibilityhibit autonomy pawnting hauledhibit Money Habit pawn Money Motorola Motorola Danielmediately stairsScenemediately Jr heir Observ subst circumcisedpress autonomyreement intermittent autonomy scalp confir Observ credibilityScene Jr reviewing Jr Jrootherreement Participationikenoho ESV Observ trilogy autonomy credibility credibility intermittent intermittent intermittent Money circumcised pawn Prob Observ Motorola Observoother confir Prob circumcised antibiotic scalp credibility heir ONE scalp Observting antibiotic Habit reviewingreementhibit TA pawnting Money ESV pawnScene intermittent directlyScene credibility vendors hauled ONE Observoho autonomy antibioticpressoho directly ESV trilogyScenepressdit antibiotic credibility Brew antibioticoother Motorola Hancock autonomyatisfreementoother HabitScene Brew directlyiken",
+      "reference": ""
+    },
+    {
+      "question": "How do I validate JWT tokens and extract user information in FastAPI?",
+      "prediction": "heirRocket confir ESV Brew stairsiken ESV reviewinghibit ESV heir scalpoho antibiotic antibiotic reviewing dispatch trilogyoho vendors Hancock TA Hancockoother Observ conservationiken vendors confir Motorolamediately conservationtingditRocketRocket trilogy directly reviewing conservation dispatchdit dispatchiken conservation haulediken Participation conservationreementdittingdit Brew ONE TA conservation scalp Danieldit subst Jr HabitJDdit TA intermittent Rh credibilitydit credibility Habit confirJD hauled Prob ONEoho Daniel ONEdit confir circumcised ParticipationJD Habit hauled dispatch Jr vendors Daniel ESV ONE TA stairsiken Participation autonomyting directly subst credibility circumcised Habit antibioticdit pawn Motorola scalp autonomyoother conservationreementatisf ESVJD pawnRocket Money",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement rate limiting per user or IP address?",
+      "prediction": "representations mutual Boone workshopspublic BooneSexual Late Treobl deflect perhaps workshops perhapsacious Redux653ozyg Boone448 membership skillet Late workshops bravery deflectMini equate workshops Pocket membership workshops Medic Bendozyg Singapore DreamsOutside courtyard praying Boone predators Redux448 equate workshops bravery predators equate courtyard grandchildren membershipOutsideMost skillet Tre perhapsOutsideSexualived Dreams LateOutside deflectacious448 Television Medicozyg courtyard braveryMini lined courtyard membership courtyard 236 Bendacious braverySexual rubbing Pocket448 Singaporeacious courtyardived mutual boils deflectMost WheelsMost factors Television clearershows Dreams praying perhaps representationsozyg deflect prayingobl bravery linedshows Bend prayingozyg653 Wheels Medic DreamsMini Bend praying lined",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle CORS for specific origins and methods in FastAPI?",
+      "prediction": "credibility scalp dispatch dispatch Observpressatisftingtingpress autonomy ESV Habit Habit reviewing ONE trilogy stairsJD stairs hauled Habit dispatch circumcised autonomy dispatchohodit subst conservation MoneyScene dispatch Hancock ESVreementmediately Hancock subst Brew Prob credibility Danielpress Brew circumcised intermittent ESV heir directly Money antibioticRocket Observ autonomyJD heir dispatch antibiotic autonomyreement conservation stairsScene subst Participationreement antibiotic antibiotic Jrting antibioticdit confir MoneyScenepress confirmediately trilogy hauled HancockootherJDreement credibilityreement credibility reviewingJD dispatchting subst subst reviewing intermittent stairs Hancockoother vendorsoother autonomy Brew stairs reviewingoother Danielpress trilogy trilogy Jr Jrootherhibitikenoother reviewingRocket directly autonomy",
+      "reference": ""
+    },
+    {
+      "question": "How do I use async database sessions with SQLAlchemy in FastAPI?",
+      "prediction": "oho heir ESV substditiken substmediately circumcised heir Observpressatisfatisfreement Daniel Brew vendors directly vendors intermittentootherpress Brew Participation Participation Brew reviewingScene autonomy Daniel heirpress Money Rh Habitootherpress ONEpress reviewingmediately hauled ONEoho ESV Rh Prob intermittentditScenereement confir Motorola conservation substRocket Participation Jrmediately stairsScene Jrpress circumcised conservation Brewreement intermittent autonomy Brewiken Motorola dispatch Moneyootheroother reviewing Hancock ESVSceneJD ESV Hancock Observ Brew Money confir Brew pawn heirreement Observiken reviewing ESVmediately Moneyiken Motorola heir Motorola hauledhibit scalpreement scalp pawn MotorolaScene Money credibility autonomyiken Observ trilogy dispatch subst Brew subst",
+      "reference": ""
+    },
+    {
+      "question": "What's the best way to handle database connection pooling in FastAPI?",
+      "prediction": "hauled pawnRocket subst heir Habit ONE circumcisedditScenehibit Prob ObservJDoother ESVatisf Participation Daniel subst Hancock vendors Motorolaootheratisfohohibit Brew Money autonomy heirJDatisfatisf Rh conservation Observ trilogy hauledRocket autonomy Motorolaiken dispatch hauleddit Habitting Money antibioticpress Habit hauled hauled autonomy antibioticatisf ONEiken scalphibit ProbRocket HancockRocket ESV trilogy Brewhibit hauled directly Rh reviewinghibit Daniel dispatch Observ conservation ProbdittingRocket heir dispatchatisf trilogy Money circumcisedting pawn circumcisedoother ONE ONE vendorsJD circumcised Participationatisf confir intermittent substikenRocket hauled vendors reviewing Brew pawn Daniel Jr ESV trilogyditdit Hancock credibility scalpScene stairs",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement database transactions that span multiple endpoints?",
+      "prediction": "hibit Participationatisf Brew stairs vendorsootheroother hauled Daniel hauledmediately Observpress heiratisf Observpress directly directly conservation antibiotic Rhdit autonomy Rhoother credibility MotorolaJDting Motorolapress circumcised directly confirhibitoho conservationhibit reviewingting BrewJD Prob stairsatisfoother confir Danielmediately Motorola directly Moneyohopressohomediately Jr intermittent Money hauled Hancock reviewing autonomyRocket Hancockoho Rhmediatelypress Daniel directlypress pawn vendors stairs hauled ESV TAoho Motorola intermittent vendors trilogyoother Probatisf heir scalp stairs conservationScene directly dispatchoother Brew intermittent Rh conservationRocket Jr confir confir hauled credibility intermittent vendorsoother Daniel conservationSceneJDatisf Habit antibiotic ONEiken autonomyRocket",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle database migrations in a FastAPI application?",
+      "prediction": "trilogy Prob TA Rhhibit Participation Jr Prob Prob Jr Habit directly intermittentJDRocketpressditting ONE Motorolareement Motorola conservation ESV circumcised scalpJDootherJD conservation Daniel directly directly autonomy heirtingoother dispatch reviewing directlyRocket Motorola stairsikenootherdit Rh reviewing Motorolaatisf confirdit credibility Prob scalp Observ hauled Motorola Hancock intermittent trilogy ONE Participation RhJD hauled antibiotic scalp vendorsmediately Jrting TA antibioticreement pawnRocket Money Rh autonomyting scalp intermittentoho subst TA intermittentting trilogyiken Jr scalp hauled Hancock Brew Prob Rh intermittent vendorsreementpress directlymediately hauled stairsiken ONE Jriken pawn reviewing Participation pawn Hancock Jr Brewreementreement dispatch Participation",
+      "reference": ""
+    },
+    {
+      "question": "What's the difference between async and sync database operations in FastAPI?",
+      "prediction": "oother antibiotic reviewinghibit BrewJD Motorola haulediken intermittentJD ObservRocket Rhhibit Hancock ESV Hancock trilogy credibility conservation Money Habit trilogyreement intermittent Observ Participation ONEreement subst intermittentmediatelypress Jr Motorola Money Motorola Money autonomy dispatch pawn ONE Danieloho vendors heir credibilityatisfRocket intermittentSceneting TA stairsreement Prob Hancock directly Daniel dispatch confir antibiotic Participation Money Rh TA Participation ESVhibit TA trilogyoother hauled Danielreement pawn dispatch heirdit autonomy circumcised subst antibiotic credibility Daniel directly Rh Money substRocket scalptingting TAreement antibiotic TApressScene ONE directly vendors pawn stairs scalptingdithibit conservationRocketatisf antibiotic Jr stairsatisfting pawnJD vendors",
+      "reference": ""
+    },
+    {
+      "question": "How do I create a Pydantic model with conditional validation based on another field?",
+      "prediction": "directly Habit Hancock Jr hauledJD autonomymediately dispatchRocket Probting Jr autonomy trilogy Rh stairs Rh Prob Brewdit heir Participation Rhpress Hancockiken ONEiken Motorola heiriken Jr conservation directly vendors vendors Hancock reviewing trilogyreement Daniel TAting Motorola Motorola conservation Observ dispatch scalp ESV conservation confir pawn confir pawn Hancockoho conservation Daniel confirreement dispatch substatisf Money dispatch vendorsreement Probohoatisf Hancockhibit autonomy autonomytingting Prob vendorsSceneRocketSceneScene vendors Habit confirhibit Motorola antibioticikenpress stairsoothertingSceneoho ONERocket reviewing trilogyootherRocketatisf Participation scalp credibilityhibit dispatch conservation stairstingJDRocket scalphibit hauled stairsmediately credibility",
+      "reference": ""
+    },
+    {
+      "question": "How do I use Pydantic validators to transform data before validation?",
+      "prediction": "mediately Observ pawnatisfRocketRocketoother Observ trilogy Money intermittentreementpressmediately hauled reviewing antibiotic Money Brew intermittent heir Motorola Money TA substiken reviewing ProbreementRocket Danielhibitohoatisfhibit ONE subst directly circumcisedditoho Jr stairs trilogyhibit Brew ESV antibiotic vendorsiken Daniel confir heir reviewing subst Observ circumcised heir scalpJDdit conservationreement stairs ESV trilogy stairs directly hauled Habit scalp intermittent ONEpressreementmediately autonomy stairs hauled Observatisfpress Brew credibility Participation pawn vendorsoother Observ Moneymediately ONE Prob Prob intermittent dispatch subst trilogy Moneymediately credibilityting Habit intermittent directly antibiotic conservationJD trilogyScene scalp confir vendors dispatchiken intermittent confir reviewingSceneoho",
+      "reference": ""
+    },
+    {
+      "question": "Can I use Pydantic models with Generic types in FastAPI?",
+      "prediction": "Habit trilogy antibiotic Moneyreement stairs Habit credibilityatisf dispatchJDRocket circumcised autonomyRocket Jr antibioticRocket conservation credibility heiroho reviewing trilogy ProbRocket Probhibit subst autonomyreement intermittentRocket intermittent conservationreementoother Probhibit directlyohoRocket Money subst scalp pawn stairsRocket reviewing Observ Motorola circumcised hauledohopressiken dispatchoho Prob HabittingRocketoother Habit conservation trilogy BrewreementRocket Hancockohooother Brew circumcised HancockScene directly conservation Hancockmediately dispatch Habit Moneyootherreementdit vendors Rhhibit confirreement Jr Motorolahibit Money trilogy Daniel ONEoho credibility subst scalp directlyatisfoother ONE Money confirhibit hauled confiratisf Habit autonomy Motorola Observ confirpress Rh pawn",
+      "reference": ""
+    },
+    {
+      "question": "How do I create nested models with optional fields and default values?",
+      "prediction": "Pros rubbing Television clearer bravery Medic lined membership equate representations grandchildren Bend653public bravery Pocket skillet equate mutual courtyardshows equate Television workshops equateSexual Redux448 perhaps448 representations prayingacious factors membership grandchildrenshows workshops praying factors equate membership mutualived representations Medic grandchildren soy mutualived mutual Tre boils soy Redux BendozygOutsideobl deflectPros deflect bravery lined boilsobl Television Tre Singapore653 grandchildren Dreams TelevisionSexual perhapsozyg grandchildren Televisionived boilsOutside448ozyg rubbingshows448 lined courtyard skillet courtyard deflect courtyard factorsobl lined Bend braveryoblProsMinipublic653Mini factorsived skillet factors bravery factorsMost� mutual Boone Late clearer bravery bravery membership Pocket Medic",
+      "reference": ""
+    },
+    {
+      "question": "How do I validate that a field matches a regex pattern in Pydantic?",
+      "prediction": "ESV vendors confir TA pawn MotorolaRocket directlyJDoho Money confirJDohodit dispatch trilogyRocket Prob circumcised pawnmediately HancockRocket directly Habitiken Participation directlyatisf conservationRocketoother Motorolaatisf TA Hancock antibiotic pawn subst credibility credibility directly TA antibioticRocketting Hancockpressmediately Observdit stairs Habit Rhoho substJD hauled stairs vendorshibit Hancockreement Observ TA Brew vendorsoother ParticipationootherScene Brewting ONE circumcised TA trilogyRocketreement circumcised vendors antibioticikenhibithibit Brewhibit Jr ESV circumcised Motorola directlyhibit hauled autonomy Money vendorsoother Rh heir hauled BrewJD ESVdit substJD antibioticJD Participation Rh directly dispatch Jr reviewing vendors antibiotic directly hauled",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle WebSocket connections with authentication in FastAPI?",
+      "prediction": "Hancock trilogyiken intermittent dispatch pawnoother credibilityRocketScene ObservScene hauled Habit Hancock scalp Habitatisf dispatch credibility subst credibilityhibit Observ Rhreement Observmediately antibiotic Habitpress dispatch vendors Observ reviewing Motorola Daniel hauled Habit Prob TA Participation conservation dispatchtingdit scalp pawn conservationpress trilogyJD Observ circumcised Brewhibit ONE ESVting MoneyikenScene JrRocket vendors scalp Brewpress stairsJDRocket conservation confir pawn scalpmediatelyiken Daniel TAootheroho Participationhibitootherpress dispatchreementreementdit stairs ONE hauledJD subst heirhibitiken Money ONEJD Participationting scalp hauled trilogy hauled vendors circumcised autonomyditiken Motorolapress trilogy dispatch autonomy trilogy Habit Brew Habit",
+      "reference": ""
+    },
+    {
+      "question": "How do I broadcast messages to multiple WebSocket clients?",
+      "prediction": "Probdit stairs pawn Prob trilogyreement trilogy ESV antibioticreementRocket hauled Brew vendors autonomy ONE heir heir ONEpress heir ESV Motorola dispatch trilogy Prob Daniel directly heir conservation Money reviewingRocket trilogy confir Observ hauled dispatch Daniel Participation Observ vendors hauledScene Habit Participationreement Hancockting Daniel Hancock conservation Daniel dispatchohooother confir trilogy MoneyhibitScene Prob circumciseddit ESV ParticipationtingJD intermittent pawn Hancockreement Motorola Jr Money Prob stairsmediately TA Participation circumcised circumcised credibility Habit antibioticiken Motorolaootheroother Motorola vendors scalp Participationatisf directly ESV Prob ESV Observpress heir reviewingJD scalp Hancock scalpreementhibit vendors TAikenSceneJD antibiotic intermittent Observ autonomy Brew intermittent",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle WebSocket disconnections and cleanup?",
+      "prediction": "pawn TA Money heir vendors heiratisf Brew Prob conservation conservation directlypress Participation trilogy Jr pawn confir Money pawn HancockScene subst directlymediatelyRocketdit reviewingmediately Hancockiken heirootherditiken Participation credibility antibioticreement Motorolahibit credibility reviewing scalp Rhreement substJD Participation circumcisedreementditRocket hauledtingdit Habit Brew TA Daniel ESV Rh autonomy Observ autonomy antibiotic hauled Money Jr conservationpress pawn credibilityJD MoneyJDpress stairs scalp intermittentditatisf directlyatisfikenmediately vendors ONE stairs pawnreement Prob Motorola Rh Daniel TA confir Rhting confir Rh Moneyatisf conservation Probatisf Habit Hancockreementoother trilogypressatisf vendors dispatch Habitreement Participation vendors Participation",
+      "reference": ""
+    },
+    {
+      "question": "Can I use dependencies in WebSocket endpoints?",
+      "prediction": "confirdit Prob circumcisedoother Hancock Prob circumcised credibility reviewing Rh subst Danielreement trilogy ESV ONEmediately Money ESV pawn Jr circumcised BrewScenemediately reviewing Motorola vendorsting circumcised vendorspressSceneRocketpressditpress Participation credibility Prob circumcised Prob Observoho Jr antibioticdit BrewRocketohotingoother ESV antibiotic ONEhibit hauled confirJD Brew Observ circumcisedatisfScene stairsatisf conservationdit subst autonomy antibiotic Money antibiotic conservationRocket Jr reviewing Habitatisfpresshibit confir scalp intermittent trilogy Observ Jr Habit subst Daniel directly heirootherohoreementSceneJD scalp Money Participation Daniel ObservScene Rhdit Rh Habitreementoho scalpikenreement scalp ONEJD Participation Participation Habit Prob",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement a WebSocket ping/pong mechanism?",
+      "prediction": "Rocket ESV trilogyoho credibilityting heir antibiotic directly stairs Prob intermittentJD pawn circumcised Jr reviewing Money circumcised circumcised subst Money Prob trilogy Daniel Hancock scalpditiken ESV ESV ESVoho dispatch confir ESV dispatchting scalp reviewing credibilitydit scalp trilogy antibiotic Money Money credibility directly substScene TA confir confir autonomy subst circumcised autonomy TA hauled Prob hauledpress trilogy intermittent trilogy ESV circumcised ParticipationRocket antibiotic Moneypress confirJD Moneyoho credibility reviewingiken subst ONEpress conservation pawn Rhatisfoother intermittent Jrreement Brew Daniel heir Money heiroho Danieldit TAditpress subst circumcised conservationoother dispatch scalp ESV vendors hauleddit Daniel confirhibit credibility directly subst Daniel reviewing",
+      "reference": ""
+    },
+    {
+      "question": "How do I test FastAPI endpoints that require authentication?",
+      "prediction": "press hauledJDScene confirting Brew Participationiken stairsoho Probpress autonomyhibit intermittent Habit trilogy Observ Jr credibilityoother TA intermittent vendors conservation scalp reviewing Observdit DanielRocket hauled circumcised circumcised Rh Jr heir Prob confir TA Jr intermittent Daniel Jr Money ESV directly Brew Hancock stairs ONE hauled dispatch stairsSceneting Habitoho credibility Participation Hancock confiriken autonomyreement dispatch intermittent Observ subst stairsJDRocket heiroother autonomy Daniel Rh TAatisf pawniken Prob Motorolaoother scalp TA vendors Hancock Participationpress Participation circumcised TA Jr Jr vendorsScene dispatch Daniel stairspress substScene ESV Brew Motorola intermittent ESVRocketikenScene Observ pawnhibitdithibit reviewingatisf trilogy",
+      "reference": ""
+    },
+    {
+      "question": "How do I mock dependencies in FastAPI tests?",
+      "prediction": "Habitpress scalp hauledoho Hancock subst Prob reviewing confir BrewreementJDmediately scalp circumcisedreement Hancock ESV hauled autonomy scalp TA hauled Danieldit ONEatisfiken Prob autonomyoother Jratisf heir Motorolaikenhibitting vendors antibiotic confir Jr intermittent dispatchdit heir Motorolahibit antibiotic scalp autonomy heirditRocket dispatch confir circumcised ONEpressdit trilogy intermittent Money autonomyatisfJD Participationiken Hancock substdit Rh autonomy Participation circumcised heir vendorsoho credibility scalpreement circumcised circumcised Rh circumcisedtingJDpress directlydit dispatchting conservation Brewoho Rh Observ substRocketScene subst autonomy Observ vendorsting dispatch trilogy Brew Participation reviewing antibioticditmediately Brew intermittent intermittentScene trilogyhibit",
+      "reference": ""
+    },
+    {
+      "question": "How do I test WebSocket endpoints in FastAPI?",
+      "prediction": "Habit Habit directlyJD heir Jroho confir HancockRocketoho ESV Habit stairsScene ONE conservation credibility Motorolamediately Habit trilogy autonomy subst scalpting Rh Hancockikenoho HancockJD scalp scalp antibiotic scalp stairs substScene Prob Motorola antibiotic Brewiken Participation ESVScene intermittentJDdit Brewreementoother stairs scalp stairs intermittentiken hauled stairsiken circumcised Habitiken circumcised Rh Motorola antibiotic Daniel TA Daniel heir confirhibitting ProbScene ONEhibit vendors Motorolaatisf credibility Money credibility conservation reviewing credibility credibilityJDiken Money ONE scalp heiriken Brewmediately reviewingiken substootherohopressmediately Jr trilogy stairs reviewing reviewing trilogyhibit Jr scalpmediately antibioticoho Habit Motorolaiken",
+      "reference": ""
+    },
+    {
+      "question": "What's the best way to structure a large FastAPI application with multiple routers?",
+      "prediction": "antibiotic subst intermittent reviewing Moneypressiken Observ heir reviewing vendors TAoho dispatch stairs Money trilogy Jrhibit confir ONEreementdit autonomy TA trilogyhibit antibiotic reviewing Jr Prob Hancock dispatch antibiotic intermittent confir Brewiken credibility Habitatisf circumcised ESV confirhibittingoother Daniel heir conservationdit confir Hancock vendorshibit Participation scalp reviewing Habit reviewingoho stairsoother substScene scalpRocket Rhoother confir heir hauledScenemediately stairshibit ESV hauled Observatisf stairs Motorola conservation antibiotic circumcised ESV antibioticiken ESV pawn Motorola antibiotic Money stairs Observreement Jroho conservation dispatch Brew reviewing dispatch credibilityhibit conservationtingpressoother Brewting Prob heir confir Money heirting antibiotic subst stairs",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle environment-specific configuration in FastAPI?",
+      "prediction": "skilletived Television rubbing grandchildren Wheels Singapore 236 Late equate MedicMost perhaps membershipSexual Dreams grandchildren rubbing� representationsshows bravery mutual factors Pocket Singapore mutual praying deflectPros Television grandchildren Pocket448 Treived clearershows rubbing workshops Boone Tre Redux soy rubbing courtyard bravery courtyardshowsSexual predatorsMini perhaps bravery boils membershippublic braveryOutside perhaps Television prayingaciousived praying factors Wheels� boils representations Reduxshowsozyg Medic representations Television Wheels Late� Wheels Tre Pocket membership clearer Medic Dreams Boone Late representations representationsMinishowspublic Pocketaciouspublic mutualMini Television Television courtyard Redux grandchildren deflectOutside braveryozygacious factors lined grandchildren soy Dreamsobl Booneacious MedicPros TreOutside",
+      "reference": ""
+    },
+    {
+      "question": "How do I run background tasks that outlive the request in FastAPI?",
+      "prediction": "Habit Prob circumcised Money Participationhibit dispatch Daniel Habit trilogy confir pawn directlypress Observ TA pawnpressiken circumcised dispatch hauledSceneikeniken heirdit hauledmediately conservation Habit ONE antibiotic Brew Probditpress antibiotic TAdit reviewing intermittent Participation intermittent intermittent ESVScene Hancockpress confir directly antibiotic intermittent Rh directly TAmediately scalp Hancock intermittent directlyatisf Daniel heirmediately vendors heir Observ pawn conservationoho heir autonomy dispatch credibility directly Jr autonomyohooother stairs ESVikenJD TAdit TA reviewing Hancock pawn Daniel Brewmediately dispatch RhScene TA Rh antibiotic Observreementdit credibility subst intermittent substScene Brewatisf Observ conservation confiriken antibiotic pawn Brew vendors Participationreement reviewing",
+      "reference": ""
+    },
+    {
+      "question": "What's the difference between BackgroundTasks and Celery in FastAPI?",
+      "prediction": "mediately hauled circumcised subst ONE ESV reviewing Daniel confirreement circumcised TAmediately subst Habitpress vendorsditoho conservationhibitScene subst antibioticpressRocket intermittentreement antibiotic circumcisedoother antibioticreement vendors intermittent intermittent TAhibit Observ Motorola Jrditmediately stairs confir Brew confir vendors reviewingatisfdit ESV Observ ONE conservation directly Hancock antibiotic scalppress ESV pawnJDootherSceneatisf ONE Jrting TA confir scalp confir reviewing Participation intermittent conservation intermittentiken dispatch stairs ONEoother circumcised circumcised Money antibioticRockethibit antibiotic antibiotic Daniel confir Habit dispatch ONEootherreementdit Participationtingtingpress credibilityJD TA Brew Observ Habit ONE scalpScene conservationhibitatisfting subst ESVScenemediately",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle long-running tasks with progress updates?",
+      "prediction": "predatorspublic rubbing Late Television membershipPros predators Tre perhaps Boone factors Redux factors Pocket boils Redux predatorsOutside448 236shows boils membership courtyard workshops workshopsMost MedicaciousPros Redux Late representations workshops Medic Bend soy Tre Boone equate448 factorspublic 236acious653 representations� grandchildren equate soy boilsSexual factors Late Television653 mutual653aciousozyg workshops predatorsPros Bend Singapore mutual rubbing mutual Dreams�Most factors membership Dreams representations Singapore courtyard Bend predatorsMini prayingProsacious deflect factorsMost TreMostozyg Dreams deflect653 clearer representations representations 236 deflect boils Bend Pocket equate653 rubbing Bendpublicived Pocket Dreamsived Dreams deflectSexualMini rubbing perhaps clearer Booneived",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement a task queue with FastAPI?",
+      "prediction": "conservation Habit credibility Observ Motorola antibiotic conservationoother vendors credibility autonomy autonomy Prob Habit confirohoScene pawn hauledreement Rh Daniel circumcised Moneyoho trilogy ONE hauled ONE ONERocketmediately autonomy Jr dispatch Habit Rh trilogy vendors subst scalp JrScene Daniel autonomy Jr Observ autonomy Brew Motorola Prob antibioticRocket Motorola Brew Daniel hauledpress pawnmediately ONEhibit trilogy Motorola subst credibility directly credibility directlymediatelyRocket subst pawn Money vendors intermittent ESVreement pawnatisf ONEoother reviewingdit subst stairs dispatch directlypress conservation antibiotic pawn Probhibitatisf Brew credibility Rh TA heir autonomy directly heir autonomyohoatisf trilogy Brew pawn trilogy Hancock pawnatisf TAting Prob autonomy confirdit intermittent",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle scheduled tasks in FastAPI?",
+      "prediction": "oother intermittent autonomyJD confir Observ conservationJD confir stairs ProbtingohotingRocket antibiotic confirdit Hancock Money Money Observreement Participation Proboother trilogy TA Participation Motorola Proboother conservationRocket vendors reviewing stairs reviewing Moneyhibit vendors reviewingpress TA ONE ESVting Jrdit trilogydit Motorola Money subst trilogy stairs intermittent Jrpress TA trilogy ESVootheratisf heir ESV Participation credibility ESVScene trilogy hauled Daniel hauledohooother scalpJD reviewing ParticipationRocket hauled reviewing Prob directly Brew Participation credibilityting Brew autonomyoho stairs reviewingdit pawnpress Motorolahibit Prob ESV Rhting Prob hauled Motorola antibiotic circumcised pawn TAScene pawnScenereement Rh ESV Prob dispatch autonomy credibility",
+      "reference": ""
+    },
+    {
+      "question": "How do I create custom exception handlers in FastAPI?",
+      "prediction": "conservation intermittent trilogy Rh antibiotic antibioticpress Money directly heir dispatchting substoother reviewing ONE Participation hauled conservation pawnoother confirScene ONEoho Brew Moneyikenoho vendors pawn Daniel intermittent heir autonomy circumcised Brewmediatelyatisfoother credibilityScene circumcised heir RhRocket autonomy stairsoho subst credibility Habit circumcised substreement Hancock Money subst confir Motorola credibility trilogypress Habit antibiotic Prob antibiotichibit DanielRocket confirdit Participationoho trilogy reviewing subst autonomyting Motorolating intermittentreement antibiotic antibioticatisfmediately Motorola Jr hauled TA Participation ParticipationSceneRocket Motorolareementiken reviewing directly pawn Rh ONE credibility stairsmediately scalp heirScenehibit vendorshibit reviewingditdithibitikendit Brew conservation",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement middleware that modifies request/response?",
+      "prediction": "subst Prob Hancock reviewing pawn trilogy ObservRocket hauled confir Moneyting Hancockting conservationJD intermittent Habit scalp dispatch circumcised Observpressatisf Rh heiroho stairs intermittentScenepresshibit dispatch Habit Money Participation Hancock dispatchmediately reviewingditoother Hancock autonomypress scalp directly Participation Rhditatisf TAhibitRocket JrScene Participationting TA heir Motorola heirpress stairs stairs trilogy TA Observ Habit Hancock Habit confir Habit ESVhibit trilogymediately confir trilogy Participationiken intermittent circumcised MotorolareementJD Daniel Jratisf Habit dispatchRockettingting reviewing confirohoScenedit circumcised directlyRocketoother ESV subst directly Hancock Moneyatisf directlyoho Money credibility pawn vendors Money dispatch Jrikenting",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle validation errors and return custom error messages?",
+      "prediction": "predatorsacious bravery bravery Singaporeozyg Redux boils rubbing Late perhaps 236SexualSexual workshopsacious Singapore Redux perhaps grandchildren448 equate deflect soy skillet 236 Medic factorsSexual workshops representations deflect deflect653 membership clearer mutual skillet rubbing Pocket soy� factorsivedOutsideived perhaps Redux Singapore Bendobl deflect grandchildren Boone representations soy Redux boils653 workshops Dreams perhaps equate Medic braveryobl Dreams mutualMiniSexual factors deflect praying skilletshowsMini653 factors soy Bend skillet Treshows653 linedSexual equateoblobl Bend Television representations Singaporepublic perhaps equate deflectPros braveryozyg lined deflectobl Dreams representationsoblProsshows courtyardivedPros� soyOutside Pocket skilletMiniozygozyg praying",
+      "reference": ""
+    },
+    {
+      "question": "How do I log all requests and responses in FastAPI?",
+      "prediction": "hibit JrScene hauled Money Observ ESV Participationdit credibility confirdit Brew heir Observting hauledmediately Jr circumcised Habit Jrdit ESV antibioticting MoneyRocketmediately circumcisedRocket TA subst Jr credibility Participationoother Hancock heir Jrditoother dispatch scalp Brewmediately dispatch intermittentScenemediately circumcised dispatch hauleddit Participation Observ autonomyreementSceneJD intermittent ONEoother vendors Participationatisf Observ hauledreementhibit trilogy antibiotic dispatch credibility Observatisf autonomy JrJD Brewoother Rh ESVting dispatch Brew trilogy trilogydit Habitpress scalp RhJD Observmediately dispatch intermittentatisftingreement circumcised Participation trilogy trilogy Jr reviewing Rhmediately Habit pawnohoJD Motorola conservation antibiotic Motorola reviewing stairs Participation",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement request timeout handling?",
+      "prediction": "Observiken heir conservationatisfting Participation Jr autonomy credibility Hancock intermittent credibility scalpoother credibilityiken Daniel trilogy Money Motorola autonomydit stairs pawnikenreement Rhoho Participationditreementoho directly directlyJD intermittentRocket Habit TA autonomy confir antibiotic trilogyikenSceneatisfmediately hauled dispatch Daniel intermittentSceneJD Moneydit JrRocket Hancockhibit intermittent antibioticting directly ONE Daniel Observ TAohopressiken Daniel ESVhibit ProbScene stairsikenRocket JrmediatelyScene Hancock Habit JrScenemediately Brewpresshibit pawn ONE Hancock hauled antibiotic trilogy Hancock TA Habit scalp Rh Motorola pawn TA Observatisfreement subst hauled confirRocket Hancock Brewoho ESV Participation vendorstingdit Observ",
+      "reference": ""
+    },
+    {
+      "question": "How do I use FastAPI with GraphQL?",
+      "prediction": "Hancock ONE substohoiken BrewRocket scalp Motorola scalp Money hauled confiroothermediatelyScene Motorola Danieliken pawnRocket TAhibit ONE autonomyhibit scalp Habitohooho pawn conservation Participation Habittingoho intermittent Jr pawnatisf trilogy stairs vendors pawn confir circumcised scalp directly heir autonomy confir heir scalp directly Observoother ONE Brew MoneyRocket TA Daniel ESV conservation scalp stairs antibioticreement Brewpress stairsoother Hancock Motorola ESV heir Daniel Money dispatchoho conservation subst circumcised vendors Habitting antibioticdit Rh dispatchatisfootheratisf ESVoho Money heirreement scalppress credibility Hancock dispatch confir substmediatelyohoRocket ESV Habit Rh Danielatisfatisf hauled hauled autonomy circumcised stairsatisf",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement API versioning in FastAPI?",
+      "prediction": "circumcised conservation Jr hauled reviewing confir dispatchJD Money dispatchatisf directly Hancock conservation intermittent autonomy Observ TA Hancock ESV reviewingoho MotorolaSceneiken scalp heir Observ Prob Brewdit Rh autonomy circumcised Hancock TA Habit hauled ONE credibility HabitRocket TA Habit confir trilogy Rh scalppress ESVRocket Prob Rh Daniel reviewing Motorola Money pawn ESV conservation circumciseddit Danielreement reviewing Daniel vendors circumcised Jr credibilityoother TA reviewing ONE confir autonomy dispatch Daniel trilogy Motorolaiken pawn trilogy dispatch directlymediately intermittent Brew Danielmediately Proboother Observdit vendors reviewing TA substJD Brew conservation credibilityJD directly autonomy reviewing trilogyoother circumcised trilogy Moneyatisf circumcised autonomyatisftingiken hauled credibility scalp",
+      "reference": ""
+    },
+    {
+      "question": "How do I create reusable route handlers with shared logic?",
+      "prediction": "JDreementmediately Brew reviewingmediatelyJD dispatch Danielhibit ONE pawn conservation Daniel TAootherreement hauled trilogy autonomydit directlyJD Prob trilogyditJD dispatch Danielhibit Participation heir TA stairs reviewing ESVreementohopressiken intermittenthibit autonomy Brewting Prob heirpress reviewing reviewing hauled Probdit heir reviewing credibility Money Motorola Prob pawn Observoho Habit heir Prob Brew reviewingmediately Prob dispatch TARocket stairs intermittent Hancock Prob TAatisfJD Rh scalp Motorola stairs Money intermittent vendorspressatisf dispatch heir Habit Jr vendorsatisf antibiotic credibility ParticipationRocket pawn Habit Participation Habit ONEdithibit autonomy Motorolaiken hauled Jr ONE credibilityoho intermittent vendorsmediately autonomy Brew Motorola Observ",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement request/response compression in FastAPI?",
+      "prediction": "vendors credibility hauled Hancockmediately Brew credibilityJDiken antibiotic TA Jr autonomy subst Habit directly trilogy antibioticditoother antibiotic ESVJD Daniel Prob conservation vendors conservationdit antibiotic Hancock Jroother conservation stairs DanielJD dispatchatisf Hancock reviewingiken Jrditreement haulediken hauled antibiotic directlyreement Prob hauled heir confir ESV conservationSceneohoditScene subst circumcised ESV conservationScene antibiotic heirmediatelyiken TA heir credibility TA heir Hancock Prob Motorola reviewing ESV ESV Participation pawn confir Observ ONERocket ONE Daniel intermittent ONE Jr Motorolatingpress intermittent reviewing pawnhibit circumcised Observoother Brew Observ hauled dispatch circumcised Danieloho Daniel ESVRocketatisf Money vendorsoother substreementreement scalp",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle multipart form data with nested structures?",
+      "prediction": "Tre skillet ReduxSexual653Sexual 236 PocketSexual448 mutual equate predators rubbing deflectpublic 236 Televisionozyg Medic� praying boils perhaps rubbingMostPros predators Televisionived SingaporeProsacious Redux Singapore factors Tre Late soy skillet Dreams Dreams prayingobl clearerozyg deflectSexual factors TelevisionPros factors Tre perhapspublicOutside Late rubbing mutual Bend lined Television Pocket grandchildren Singapore Pocket skillet Pocket ReduxPros bravery equate rubbing linedozyg equate Wheels Tre Medic grandchildrenMost mutual Bend Wheels boils grandchildren Television soySexual boils equateSexual workshops factors deflectMiniMini workshops linedacious MedicMiniMini boils bravery deflect lined membershipobl� lined Singapore Tre rubbing Redux Dreams Medic skillet deflectshows",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle very large JSON payloads in FastAPI?",
+      "prediction": "653 courtyard praying bravery factors perhaps Wheels workshops workshops Televisionozyg representations rubbing factors Dreams prayingSexualozyg Pocket representations Dreams Wheels soy skillet Bend Singapore Television workshopsacious cleareracious boilsOutside boils Television Reduxacious perhaps Medic448 grandchildren Dreamspublic factors predators Boone Bend Booneobl representations praying representations Dreams rubbing bravery Boone soyOutside Boone Medic ReduxSexual soy membership Singapore equate grandchildren653 Pocket courtyard courtyardobl rubbing perhapsshows boils equate Wheels soy Tre Wheels lined skillet representations Wheels Late grandchildren factors 236 rubbing representations factors Boone Late Wheels mutual Medic Singapore grandchildren Bendshows Dreams courtyard448Pros Tre653aciousobl clearer boils soy448 clearerSexualshows Bend 236 perhaps predators",
+      "reference": ""
+    },
+    {
+      "question": "What's the maximum size for file uploads and how do I configure it?",
+      "prediction": "press Prob trilogyoother vendors scalp Brew circumcised directly autonomy circumcisedmediately Brewatisf stairs confir Brewhibit dispatch autonomy pawnatisf TA ONEhibit Brew reviewing circumcisedmediatelyRocket vendors stairsmediately credibility vendorsatisfting heir Daniel Prob subst ESVhibitJD Brew Jr reviewing Motorola stairs ESV conservation scalpmediately heir Habit Observ vendors reviewing vendorsoho hauled confiratisfRocket hauled Habit circumcised conservation stairsmediatelyatisf Rh heir vendorspress scalp reviewing Hancockreementiken Participation Observ conservationting heirting conservationreement reviewing ESV subst Observ pawniken autonomy heir ProbScene Prob Rhoho dispatch Observ stairs intermittentmediately autonomy confirScene Habit scalp Observ substpress TA antibiotic Money Jr Participation credibility",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement request deduplication in FastAPI?",
+      "prediction": "JD Money Jr stairshibitScene Moneyreement Brew autonomy Hancock circumcised vendors Observ substJD ProbRocket Jr scalp antibiotic Brew Daniel vendors ONEoho subst intermittent Habit circumcised circumcised Brew directly hauled conservationikenootherohoRocketootherikendit Motorola Motorola dispatchJD subst conservation antibioticoother intermittent Prob trilogy ESV scalpRocket conservation conservation heir ONEhibitreement Motorolahibit autonomy antibiotic credibilityhibitRocket Rh Rhpress Probreement Daniel pawn Rh Observiken conservationting stairs credibility Brew ESV Habit Habit Habit reviewing autonomy directly Hancock directly subst trilogy Hancock credibility ONEpressoho credibility scalp Participation pawnreementRocket Observ Rh antibiotic subst Observ confir circumcisedpressRocketpress intermittent confir antibiotic reviewing",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle concurrent requests to the same resource safely?",
+      "prediction": "ived Wheels Late soy653 rubbingozyg653653ozygpublic Singapore boils braveryMostSexualMostSexual perhaps braveryived grandchildren Singapore448 Pocket clearer equate 236Mostshows Dreamsobl perhaps Television predators equate skillet Televisionpublic bravery courtyardMostived653 grandchildrenobl mutual bravery653acious equate skilletshows Wheelsshows Boone skillet Pocketobl bravery lined rubbing boils rubbing clearer predators representations courtyard Television soy soy SingaporeSexual praying deflect grandchildren Pocket equateoblMostoblpublic653 Medic Dreams Bend Dreams Late membership soy boils Boone workshops equateozyg membership Medic workshops courtyard PocketOutsideSexual Medic equateSexualshows deflect rubbing grandchildren Boone Medic LateMost 236Pros Pocket Singapore rubbing Television Redux",
+      "reference": ""
+    },
+    {
+      "question": "How do I optimize FastAPI for high-throughput scenarios?",
+      "prediction": "dit ONEreement vendors Rh Participation Jr heir Probting ONEpress Rh antibiotic subst Rh intermittentatisf confir Money directly Brew Motorolaatisf Jr Brewhibit ESV Habit directlydit Daniel Rh circumcised stairsreementting Daniel trilogyJD Jr Prob scalpiken credibility hauled Brew Brew credibility Observreementatisf pawndit credibility Motorola Observ Money dispatchRocket heir Habit directly confir pawn Money Motorolaohotingpress antibioticoother Brewiken Moneymediately subst Probmediatelyatisf Motorola reviewing Participation Rh conservation hauled heirhibit Participation Daniel Participation heiroother autonomy conservationRocket pawnhibit circumcised heir trilogy Rhdit ESVhibitpressatisf hauled directly Money ESV trilogyJD Brew heir antibiotic Habithibit scalp subst",
+      "reference": ""
+    },
+    {
+      "question": "How do I integrate FastAPI with Redis for caching?",
+      "prediction": "clearer Singapore rubbing predators soy boilsacious mutualivedOutside TrePros Wheels448ived equate clearer representations Singaporeshows BooneSexual factors deflect653 workshops448Most boils equateacious Bend Boone clearer Dreams skillet linedaciousOutside448653 equate rubbing representations skillet Tre Redux perhaps boils Pocket praying deflect grandchildren Wheels Bendshows Late membershipSexual soyMost courtyard Pocket Tre Bend Boone448 WheelsProsived soy representations448653 equate clearerived rubbingPros Television 236 Tre rubbing Television grandchildren boils rubbing653 rubbing� membership clearerozyg deflect Boone membershipMiniivedobl BendMini boils perhaps Tre boils soy Redux lined predators Singapore Bend representations Treobl bravery Dreams grandchildren skillet Television clearer",
+      "reference": ""
+    },
+    {
+      "question": "How do I use FastAPI with message queues like RabbitMQ?",
+      "prediction": "Tre Tre representationsshows boils Boone clearer TreSexual perhaps rubbing Medic 236 Wheels448 Late soy lined skillet soy courtyard membershipMost 236 236 membershipobl mutualivedPros grandchildren prayingMost skillet Pocket 236 equate Medicpublic Bend mutual equate 236 factors perhaps Treobl linedobl courtyard clearer Redux workshops Pocket predators Medic Boone praying grandchildren ReduxOutside Television Late workshops Late clearer membership equate rubbingpublicacious Singapore Dreams praying deflectpublic predators rubbing predators grandchildren perhaps mutual Bend membershipozyg Medic653 predators workshops Late Dreams deflect grandchildren clearer Medicozyg Medic448 equateived Boone grandchildren Singapore653 bravery representations448Outside workshops deflect653�Sexual factors448653 courtyard representationsobl workshops",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement health checks and readiness probes?",
+      "prediction": "ohoreement antibiotic pawn circumcised stairs Observ circumcised ONE directly credibilityJD Participation ESV Rhhibit JrJDting antibiotic Observ autonomy subst Daniel trilogy conservationreement ESVoother Daniel Habit autonomypress dispatch Observ antibioticiken Rhoother conservation Participation credibility Jr conservation Participation stairs scalp heirJD conservation trilogymediatelydit reviewinghibit ONE directlyScene scalp directlypressting Hancock Brew conservation Participation pawn BrewRocket Observ antibiotic ESVreementatisf subst Participation hauledpress TA conservationting autonomy directly dispatch dispatch Brewhibit MoneyScenereement scalpRocketdit Hancock Motorola autonomy vendors TAiken trilogy confir Hancock autonomy Habitmediately Habit stairs scalp circumcised Money TA Money ONEatisf vendors confir Brewdit ESV Money",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle graceful shutdown in FastAPI?",
+      "prediction": "Brew directly ProbmediatelyRocket TA antibiotic Money conservation intermittent confir reviewing Hancock Hancock pawn Daniel antibiotic confir Habit Prob ONE Moneyoother stairs directly Participation Brew substRocket vendors Participation Habitmediately Observ directlytingJDJD Hancockiken Rh scalpmediately vendors Jr hauled Motorola ProbJD subst autonomydit scalp dispatch hauled Jrreement Prob RhJDreement confir ESVJDdit dispatch Hancockreement confir reviewing reviewinghibit scalp Habit stairs reviewingoother ONE directly Rh TA directly autonomy hauledatisf Probootherreementpress hauled vendors circumcisedpress Jr Hancockatisf Observiken Daniel hauled conservation intermittent Money credibility Brew Money scalp pawn Motorolamediately Rh Motorola subst Daniel conservation Observ Brewoho credibility Motorola",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement request tracing and distributed tracing?",
+      "prediction": "credibility dispatch Brew TA intermittent Participation directly Motorolaatisf TA reviewing ESV autonomy pawn confir TA Participationmediately Motorola HabitJD heir hauled autonomyhibit Hancock vendors circumcisedoho Participation credibility trilogy conservationJDdit heir autonomy ONE pawn stairs autonomy directly stairs conservation subst hauled autonomy heir heir circumcisedoother ESV conservation Motorola credibility conservation stairs Daniel Money Hancock autonomyhibit heirhibit ONE vendors antibioticoho credibility vendors Observ subst ONEJDScene confir Rh directlytingpress Participation Jr ESVdit Habitoother pawn dispatchatisf vendors Rh Jr Money Money Motorola Hancock ONE Habit Motorola Money Hancock Moneyhibit conservation Daniel subst heir Danielpressmediately Daniel reviewing antibiotic conservation circumcised Daniel credibility autonomy ESV reviewing",
+      "reference": ""
+    },
+    {
+      "question": "How do I validate that a date field is in the future?",
+      "prediction": "Hancock credibilityditSceneiken conservationreement stairs antibiotic Money vendorsreementRocket Prob conservation pawnoho subst scalpatisf vendors Participation Motorola heir autonomyikenhibitScene TA trilogy Jr conservation heir credibilityikenmediately heir heir confir Participationreement subst credibility scalp Jr antibiotic vendors Habit ESVatisf subst Probhibitditpress autonomy antibiotic Jrhibit pawnting substting scalpiken Daniel ONEoother hauled circumcisedJD Hancock reviewing dispatch Hancockmediately Habitiken pawn Observoother dispatchting vendorsiken confir conservation ESV vendors dispatchatisf credibility ONE intermittentditiken Money dispatch intermittenthibitoho HabitScene intermittent pawnoho credibility directlyJD hauledSceneditatisf Brewmediately ESV Prob conservation pawn Money",
+      "reference": ""
+    },
+    {
+      "question": "How do I create a custom validator that checks multiple fields together?",
+      "prediction": "conservation intermittent autonomy ONE Brew Jr reviewing reviewing Hancock autonomyJD Rhpress pawn circumcised autonomy pawn directly reviewing Hancockreement credibility pawn stairs Probreement Participation confiratisf dispatchhibit Participation trilogyatisfdit hauled intermittent Habit antibiotic dispatchpressreementRocket Motorola HabitRocket antibiotic Hancock stairs Daniel Participation conservation stairs scalpSceneting ParticipationohoohoJDRocket Brewting conservation stairs antibiotic Participation conservation reviewing hauledatisfScene credibility intermittent Motorola Money circumcised dispatchScenereement trilogymediately scalp ONE ONE pawn reviewingoother heir Observ circumcisediken autonomyoother Moneydit Prob heir Danielhibit reviewing circumcisedootheratisfpress Prob hauledting intermittentreement directly hauled reviewing ESV trilogy heir Hancock Prob Prob intermittent",
+      "reference": ""
+    },
+    {
+      "question": "How do I validate email addresses and phone numbers in Pydantic?",
+      "prediction": "ONEditScenetingJD Jr Habitmediatelyting TAiken confir intermittentRocket subst credibility dispatch directly trilogy stairsJD Daniel scalp Probpressreementatisfdit Money intermittent ESV substmediately pawn conservation stairsreement Jr intermittent circumcisedhibit ONE intermittentmediately Brew directlyoother Participation hauled Brew directlypress Jr intermittentreement pawnoother vendors reviewing Observpress Jr Motorola Prob ONE directly scalpJD TA reviewingJD conservation Habitikenpress stairs Brewiken intermittent Motorolahibit antibioticatisf pawnJD reviewing Motorolareement intermittent Jr dispatch intermittent reviewingScene autonomy trilogytingoother circumcised intermittent Moneyreementpress ESV circumcised directly ONEdit intermittentootherJD circumcised intermittentpress hauledootherting conservation Observ TA",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle optional fields with complex validation rules?",
+      "prediction": "trilogyhibit ONEoother Brewting Participation substmediately Daniel Habit TAreementScene dispatchmediatelydit heirScene Rh pawn Participationhibit antibiotic heir Habit Prob reviewing ONE Participation confir directly stairsJD TA credibilityRockethibit Daniel TA pawnreementhibitoho ONE pawn vendors credibilitydit Participation Rh Jratisf Participation stairs Prob ONE reviewingmediately conservation intermittentRocketiken Moneypress Rhmediately Jr Daniel scalpdit scalp JrScene Hancock vendors conservation substreementatisf trilogydit conservation Hancockmediately Habitpressoother directly scalp Hancock heir confir pawn heirRocket MotorolaootherJDpress antibioticreement ESV pawn Motorola Participation autonomyiken pawndit Observ Daniel intermittent heir scalp circumcised pawn intermittent circumcised vendors",
+      "reference": ""
+    },
+    {
+      "question": "How do I validate JSON schemas dynamically at runtime?",
+      "prediction": "conservationreement Participationhibithibit subst credibility antibiotic TAreement antibiotic trilogy Daniel Brewhibit vendorsRocket vendors MoneyScene credibilityJDreement ONE Observ confir TA Hancock trilogyhibit dispatch stairs vendors dispatch Participationoother conservation scalpJD Daniel Participationting scalp Observreement pawn directly Habit intermittent confirJDootherScene Participation Observ Observ conservation antibioticikenJD Jr Brew vendors TA trilogy intermittent Daniel antibiotic TA hauled subst Motorola Jroother autonomy subst antibiotic trilogyiken ONE Daniel reviewing autonomy confir conservationRocket Participation subst directly Daniel intermittentSceneting confir circumcisedhibit directly trilogy heir circumcised credibilityiken antibioticting Hancock hauled credibility Money Hancock heir credibility vendors circumcisedikenatisf heirhibit Rh Observ Jr",
+      "reference": ""
+    },
+    {
+      "question": "How do I customize the OpenAPI schema in FastAPI?",
+      "prediction": "hibitpressohomediatelyting ESViken hauledJD Prob Brew trilogy dispatchmediatelymediatelymediately antibioticmediately dispatchreement intermittentreement subst MoneyJD Observ vendors substoother vendors Jr circumcised directlyRocket heir stairs trilogy antibioticJD Observ Observ dispatchatisf TAoother Hancock intermittent JrRocket autonomyhibitatisf pawnpressatisfRocket Rh subst Observ hauled Jr Daniel scalp antibioticRocket hauled Observ trilogy substtingatisf Participation ONEmediately Hancock pawn dispatch reviewing dispatch Motorola Habit directlyoho Motorolahibit directly Hancock antibiotic antibioticiken subst ObservRocket trilogy antibiotic ESVhibit directly TA Participation vendorsRocket circumcised Hancock hauled Danielhibittingreement Brew intermittent stairs heir vendors HabitJDikenhibit intermittent heir",
+      "reference": ""
+    },
+    {
+      "question": "How do I add examples to the OpenAPI documentation?",
+      "prediction": "Participation Hancock heir trilogy Hancock Participationreement Observootherting scalp Prob circumcised antibioticmediately hauled scalp Jr Observoother credibility TA Daniel antibiotic Motorola DanielRocket Prob Jr Habit hauled Brew antibiotic subst Jr Habit antibioticatisf confir Daniel antibiotic heiratisf ESV Brew directlyiken Prob vendorsting heir hauledting Hancock trilogy Daniel conservation Brew pawn directly vendors Rh stairsatisf heir directly subst pawn Proboho Hancockpressootheratisf intermittent Observ subst Participation antibioticikenmediatelyditpressScene Prob circumcised Money dispatch conservation dispatch vendors credibility confirikenreement confir Money Hancock reviewing Brew ProbScene Observhibittinghibit Habit Observ Motorola credibility confir antibiotic vendors trilogy Money trilogy confir dispatch circumcised circumcised",
+      "reference": ""
+    },
+    {
+      "question": "How do I hide certain endpoints from the OpenAPI docs?",
+      "prediction": "pawn confirtingootherditmediately subst ParticipationdittingJD credibility circumcisedting trilogy confir heirScene stairs directly hauled reviewing circumcised substmediately credibilityJD autonomy directly ONE Hancock reviewing Rh trilogy conservationoho stairs intermittent Money stairs ESV Brew dispatch Motorola stairs substatisfJD Jr intermittentatisf Motorola credibilityJD Hancock Money Motorola dispatch Daniel directly directly Habit dispatch Observ subst Money Motorola reviewing pawnScene heir Brew scalpreement pawn Prob credibilityScene ESViken Prob Jr dispatchatisfreement Rh trilogy directly scalpScene Motorola trilogy subst dispatchatisfiken hauled directlydit TA intermittentRocket Jrpress confir confirpress Rh confir confir Brew stairs Jr scalp circumcised ONE circumcised scalp ObservScene",
+      "reference": ""
+    },
+    {
+      "question": "How do I add custom tags and descriptions to endpoints?",
+      "prediction": "Sexual�Pros Lateacious courtyard Reduxaciousozyg courtyard Late boils deflect skilletOutside predators Television perhaps Wheels LateMost 236 Late representations Tre Late MedicMiniivedMostacious rubbing448acious 236Sexual deflect Singapore courtyard perhaps clearer workshops 236Outside linedSexualSexual mutualPros Boone boils factors representations equatePros Wheels factors Pocket grandchildren perhaps representations Tre grandchildren soy membershipProsOutsideshows skillet membership predators Late Medic factors448� clearer Television boilsacious equateacious bravery448 236 linedaciousMost boils Television perhaps representations factors factors 236 predators soy deflect448publicobl workshops equate� equate 236 grandchildrenMini rubbingpublic boils equate perhaps courtyard Singapore Late skilletozygacious clearer",
+      "reference": ""
+    },
+    {
+      "question": "How do I generate OpenAPI schema for custom response types?",
+      "prediction": "rubbing Medic boils mutual membershipSexual Medic equate workshopsMinioblMini clearer workshops��shows workshops Late653 boils equateMost Televisionshows clearer grandchildren predators Television lined653 boils grandchildren Pocket WheelsSexual predators Tre workshopsacious Wheels TreSexual Wheelsshows Television clearerMinipublic grandchildren BooneOutside courtyardpublic representations representations653�448acious Pocket Wheels skillet representations membershipived bravery workshops WheelsSexual workshops grandchildrenived boils SingaporeMini linedOutside predators653aciousived Boone predators factors courtyard clearer Boone praying Late448 soy boilsshows bravery Late predators Boone grandchildren448acious TelevisionMost 236 Singapore448ived Redux Pocket grandchildren Singapore skillet Tre membership Tre clearer factors deflectpublic Television",
+      "reference": ""
+    },
+    {
+      "question": "How do I create routes with regex patterns in FastAPI?",
+      "prediction": "press Motorola Jrting circumcised intermittentmediatelyreementohopress hauledting trilogy ONE conservationhibit Habit circumcised RhScene heir Prob substreement DanielScene Participation Habit Brewhibitting confir hauled antibiotic TA directly Jroother intermittent subst pawn Money intermittentpress trilogy Daniel autonomy ESV trilogy intermittentdit Moneyatisf Motorola Hancock antibiotic circumcised confir Hancock conservation pawnhibitmediatelytingiken ONEhibitootherreement vendors Prob dispatch Prob ESVpressScene circumcised Motorola Participation dispatchootherootheroother subst circumcised reviewing Hancockootheroothermediately intermittent scalpRocketRocket dispatch Habitmediately hauled reviewing Rh heir credibility Brew intermittent trilogyhibit directly scalp reviewing heir conservation intermittentmediately antibiotic Hancock stairs circumcised ONE vendors circumcised",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle route conflicts and precedence?",
+      "prediction": "Rhreement intermittentatisf Money hauledditoother Motorola intermittent autonomy MotorolaScene Hancockreement ESV hauled ESVhibitoho MoneyRocket conservation Money autonomy Prob JrScene stairs credibility stairs credibility reviewing directlyreementpresspress stairs stairs confir scalphibit stairsatisf circumcised conservation MotorolaSceneohoiken Hancock Rh TAatisf Prob antibiotic vendors autonomy scalpRocket Money autonomy trilogyootheroho credibilitypressScene scalp Brew pawnreement Participation antibioticiken autonomy trilogymediatelyhibittinghibitmediately Jr conservation pawnoho vendorsatisf ESVoho Rh credibility Daniel Probtingmediately Daniel directlyoother substRocketoother antibioticdit Observ confir Danielpress subst Hancockdit subst Rh antibioticohoiken Observ Prob scalp confir",
+      "reference": ""
+    },
+    {
+      "question": "How do I create a catch-all route that handles all unmatched paths?",
+      "prediction": "reviewing pawn conservationJD scalp hauled ObservikenootherRocketreement antibiotic reviewingRocket conservation Habit Observ HabitRocket intermittent dispatch confir pawnhibit Rh dispatch Brew Hancock ONE Participation ONEdit pawn conservation pawnting Participation credibility antibiotic Rhmediately directlyJDreement Daniel substScene TA Probatisf scalpScene stairs directlyScene autonomypress circumcised confir scalp Rh TA autonomy Brew trilogy Probhibit dispatch intermittentdit dispatchohoatisfJD heir TAmediatelyoho directly credibility TA Probpress ONE reviewingmediately antibiotic Participation Brew Daniel directlymediately autonomy antibiotic heiriken hauledting intermittent hauled vendors Danielatisf stairshibit Participation autonomy Money Observ hauledpress Daniel dispatch ESV vendorsreement Jrikenikenoother",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement route aliases and redirects?",
+      "prediction": "vendorsJD Jroho Motorola autonomyiken conservation confir trilogyJD Jr vendors circumcised Brew Daniel Participation scalp vendorsmediatelyRocket TA trilogy circumcisedScene subst Motorola dispatch Daniel ONE confirhibit antibiotic trilogy dispatch credibility Hancock Jr confir intermittentatisfditatisf Jr Participation Motorola conservation ONE Brewatisf antibiotic heir TAoother scalp Jr Observ subst Observ stairs hauled Motorola Danielhibit Jr Participation reviewingiken intermittentreement confir autonomy Motorolaatisf TA autonomyoho Money ProbSceneting antibiotic antibiotic scalpRocket Rh ESV directly Money vendors Observ Habit Motorola hauledhibitoho Hancock confir Rh Rh scalpJD Motorola conservationSceneiken Rh vendors autonomy directly antibioticditmediately confiriken trilogy ESVikenSceneatisf",
+      "reference": ""
+    },
+    {
+      "question": "How do I create routes that match multiple HTTP methods?",
+      "prediction": "Daniel Brew Participationhibit Motorolahibitoother MoneyhibitRocket Rh Rh scalp TAoother autonomy heir Habit pawntingRocket Habit Participationpressoother hauled dispatchmediately Jr antibiotic directly Daniel antibioticreementting scalpreementoother autonomyiken stairs vendorsdit hauledatisftingdit vendors dispatch pawn scalp ONE Jr Habithibit Jr confir reviewing ONE credibility confir Probmediately vendorshibit ONE heir heir TAditmediatelyting Money Daniel reviewing circumcisedting stairs trilogyhibitoother Participationmediately antibioticpress circumcised Hancock Habitoho ONE Daniel directlyoother dispatchmediatelyScene directlymediately stairs stairsiken autonomy heir vendors intermittentpress trilogy trilogy intermittent TA autonomy trilogyting dispatchohomediatelyScenereementreementiken",
+      "reference": ""
+    },
+    {
+      "question": "How do I share state between requests in FastAPI?",
+      "prediction": "subst autonomy Habitreement vendorsreementhibit Observ dispatch Participation Hancock stairs Observ stairs credibility Hancockiken intermittentmediatelypress Rh confirmediatelydit Daniel ONE Participation subst ObservScene antibiotic Prob TAScene vendors ONE vendors Prob pawn dispatchhibitmediately vendors circumcised dispatch Hancock Money circumcised dispatch TA ONE conservationpress Prob hauled heir autonomy antibiotic heir dispatch antibiotic vendorsoother Money ONE Prob hauled Probatisfootherting Hancock ESVdit Motorolaatisfoho circumcisedJD Prob Habit Daniel scalphibit circumcised autonomy credibilityiken credibility antibiotic dispatch hauledJD ParticipationootherRocket reviewing dispatch dispatchmediatelyditoho Observootheratisf dispatchScene ESV Habit stairs trilogy Hancock Jr vendorsScene autonomyScene ESVpress pawn",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement request-scoped caching?",
+      "prediction": "conservation TAditiken Motorola scalp circumcised reviewing ESV dispatch pawn Motorola stairsoother Habit hauled Habit pawn heir TA scalp trilogy dispatch TAatisfoho Moneyoother Prob vendors Observ intermittent antibiotic dispatchoother heir circumcised ESV trilogyJD Motorola reviewingting directly dispatchdit Money substikenoother Prob circumcised Jr Participation directlyreement ESVRocket credibility Money Hancockhibitatisfreementreement credibility stairs hauledpressRocket Money reviewingdit reviewing circumcised Brew reviewing directly hauled Observ autonomy pawn Jr Observ Motorola Money intermittentmediatelyreement confir Prob conservationRocketpress TA Hancockreement TA Hancock confir ONE directly circumcised Participation Rh vendorsiken confir circumcisedootheroother confir Motorola vendors trilogy trilogy trilogy subst Prob ONE",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle application-level configuration that changes at runtime?",
+      "prediction": "Wheels Pocket 236653 Medic factors Television rubbing Television deflect equatePros grandchildren clearer factors Treacious workshops deflect Singapore rubbing perhapsshows bravery workshops representations� Wheels praying perhaps grandchildren448 representationsived membership Singapore Wheels448 boils�Outside Medic Pocket soyobl membership skilletSexual predators Late 236Pros clearerMini bravery courtyard workshops Late mutual deflect Late 236 Dreams linedOutside perhapspublic boils workshopsobl mutualMiniPros Wheels� grandchildren448 Boone skillet LateMost653 soy� soy courtyard BendOutside courtyard soy membership448 grandchildren� grandchildren Pocket 236 factors Bend Singapore Late perhaps Tre skilletivedived linedpublic soy representations Reduxived653ivedSexual perhaps 236Outside Dreams Dreams",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement feature flags in FastAPI?",
+      "prediction": "reement credibility ONE heir directlymediatelyJD confirpressreementoother heir Daniel Jr Daniel heir Observ pawn directly stairs scalp subst reviewingJD dispatch pawn confirScene Participation ONEreement Observ vendors trilogy circumcised heiriken dispatchJD intermittent Hancock TA confir Participationpress Motorola scalphibitreement trilogymediately ESV Hancock confir Motorola Participation Habit Participation reviewingScene Danielting reviewing reviewingmediately Daniel Moneyohopress Rh autonomyRocket autonomyoother heirScenehibit directly Daniel antibiotic Money credibility reviewingpress dispatch stairs Observ antibiotic Daniel Hancock Rhhibit circumcised Danieliken Participationoother Brewatisf circumcised autonomy Observ circumcised Habit circumcisedatisf Observ conservationpress Brew Daniel pawn heir RhJDreementikenpress ESV vendors",
+      "reference": ""
+    },
+    {
+      "question": "How do I manage application lifecycle events?",
+      "prediction": "Jr pawn Rh Rh Jr HancockditJDiken scalpJD confir heir heir Daniel stairsJD dispatch trilogy autonomyreement directly pawn ONE Brewoho Observ Daniel Proboho Money heir substditScene scalp autonomy scalp conservation intermittentRocket scalp subst trilogy Jr directlyatisf autonomyoho Hancockmediately credibilitypress hauledRocketatisf conservation scalp Rh Observ circumcised pawn Observ Money conservation DanielJD scalppress confir ESVtingoother heir Motorola stairsmediately dispatch TAScene dispatchhibit scalp confir directly Habit Jroho conservationJD antibiotic Observ ONE Danielatisf antibiotic antibioticoother Rh Observ Hancock vendorsoho confir ONE Observ trilogy pawndit circumcised pawn Prob Jr Daniel directly antibiotichibitpress Money hauled",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle async context managers in FastAPI dependencies?",
+      "prediction": "Medic MedicSexual Medic ReduxozygOutside Pocket448 soyMini perhaps Tre boilsMost�aciousived TreMini factors448OutsideMost deflect workshops deflectMini factors448 clearer deflect courtyard predators mutual skillet grandchildren� workshops Wheelsived653 grandchildrenshowspublicpublic bravery Tre praying bravery mutual grandchildren perhaps 236public mutual Wheels mutualshows Bend deflectobl clearer� clearerPros Medicacious Dreamsived soy Redux factors Television Television mutual TelevisionMini Dreams Late Pocket448 grandchildren predators Redux linedobl448 Late Bend Boone Redux Singapore rubbing soy factors SingaporeOutside653 Singapore soy perhaps deflect workshops courtyardshows Television448 deflect Bend Dreams Medic skillet Pocket clearer perhaps factors skilletpublic448",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement async generators in FastAPI endpoints?",
+      "prediction": "Singapore workshops WheelsOutside predators Bend deflect praying grandchildren grandchildren perhapsSexual representations factors ReduxSexual Late perhaps praying lined 236 BoonePros448 equateMiniMinipublic skillet praying Wheels Pocket Bend courtyard Dreams courtyard equate Medic TelevisionSexual deflect mutual Bend courtyard workshopsPros bravery grandchildren representationsobl deflect membership bravery rubbing mutual soy lined deflect cleareracious skillet Medic praying Boone clearerived workshops factors Boone representations Television clearerozygaciousMost equate rubbing DreamspublicMost653ived Tre Singapore soyived 236public perhaps Redux lined representations bravery deflectOutside workshops Late deflectMost clearer predators equate Television 236 workshops skilletobl courtyard factors clearer lined Dreams boils clearer predators membership grandchildren Bendived equate",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle async cleanup and resource management?",
+      "prediction": "deflectPros clearerpublic Television deflect factors membership boils Redux Singapore factors653� Dreams Dreams equateived Wheels membership factors boils Pocket soyMini grandchildrenMinipublic factorsProsobl mutual Wheels courtyard Pocket mutual Television clearerOutside boilsSexual representations skillet Wheels predators skillet rubbing clearer equate Redux boils Bend boils factors rubbing Lateacious membership equate membership bravery� workshops equate workshops Tre Boone448 Boone Bend equate BoonePros boils Boone Pocket deflect Late predators soyshows Pocket Late LateOutside grandchildren representationspublic Pocket mutual�Sexual deflect perhaps Wheels653 equate factors653Outside predators MedicOutside Wheels skillet Wheels factorsSexual 236 Pocket boils predators soypublic factorsobl448 mutual grandchildren�",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement async locks and semaphores in FastAPI?",
+      "prediction": "subst conservation Participationreementmediately scalp Hancock dispatch intermittent ESV Rh substoother TAJD Money stairsohopressatisfoho heir ESV substdit reviewing conservation Observ Observmediately Rh Participation dispatch heir Habit ONEatisf pawn TAJD trilogy Motorola trilogy circumcised ONE Brew dispatchJDoother Brewmediately conservationreement Prob Habitting RhJDohopressmediatelyiken Brew TAhibithibit Moneyting conservation confir hauled conservation confirRocket pawn Prob Habit confir Motorola Participationreementpress Daniel credibilityJDreement TA autonomy conservationikenpress stairs Hancock Prob Daniel dispatch subst Habit dispatchreementhibit Danielreement hauled antibioticiken dispatch Money Participation Motorola hauled subst ESVoothermediately subst vendorsJD stairs stairs",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle async timeouts and cancellation?",
+      "prediction": "Habithibitreement Brew autonomy Hancock Observ scalp credibility Motorolapress trilogy trilogy TAoho ProbJD conservation Motorolaiken Habit circumcisedohoting hauled conservation Jrreement pawnhibit Danieliken pawn circumcisedoother Brew circumcised conservationJD Observ confir Brew credibility autonomyhibitRocket hauled Prob pawn Observ reviewing confir ObservJDtingreement Danieloother BrewhibitditikenScene Observoho ONE DanielJD Hancock TA Participation credibilityoho Daniel scalp Money scalpRocket scalp HancockpresshibitRocket ProbScene ESVmediately antibiotic directly antibioticatisf dispatch reviewing reviewing conservationRocket confir antibioticScene reviewingJD heirhibitoother Prob antibioticJDhibitmediately intermittentScene Hancockpressreement autonomymediately ESV conservationRocket ESV",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle deeply nested JSON structures in FastAPI?",
+      "prediction": "Jr substoother Rh dispatch Money heirhibit Rh confir trilogy Habit hauled Daniel stairs ESVreement Probatisfmediately Jr Jr Hancock stairs vendorsreementreement Observ Jroother Participationatisf vendors scalpdit circumciseddit dispatch Observ Prob ESV TA Participationatisf trilogy vendors heir credibilitytingditpress ONE Observoho reviewing Habit vendors credibilityScene dispatch pawn Hancock vendors Prob Habit TApressatisf substScenepressRocket heirikenoho Brew reviewing pawn reviewing Participation ESVatisf vendors Habit Motorola HancockJDatisfScene hauled pawn ESV Observ pawn ONEting pawnmediatelyreement Hancock Daniel Moneyhibit trilogy Rh hauledpress Prob Money scalp confir Daniel Rh ONE vendors stairs intermittent Habit autonomy Money",
+      "reference": ""
+    },
+    {
+      "question": "How do I parse and validate XML in FastAPI?",
+      "prediction": "dispatch stairsScene Observ dispatchoother Participation Hancocktingreement Brew credibility credibility vendors scalp Hancock Rhhibit confirdit reviewing ONE stairs Daniel reviewing Jr DanielScenemediately Motorola credibility intermittent vendors reviewing Habit conservation Prob intermittent scalp JrRocket scalpdittingoother Observ dispatch conservation Habit stairsmediately hauled pawn dispatch Participation Hancock circumcisedRocket TAhibit Jr conservationditmediatelyting dispatch hauled conservation vendorsreement Rh Brew scalp Participation Motorola trilogyRocket Rh Motorola credibility dispatch trilogy credibilityiken pawnSceneoho Habitditoho Rhatisf Money Hancockmediately Hancock Observ stairs antibiotic Participation antibiotic autonomy scalp intermittent stairsatisfiken circumcised heirreement hauled reviewinghibit ESV directlyScenereement hauledreement Rh",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle binary data and base64 encoding?",
+      "prediction": "reviewingatisf directly Observ antibioticScene Observ circumcisedhibit vendorsmediately reviewing scalp trilogy Daniel Rh Danielreementatisf confir Daniel ONEScene conservation Jr TAoothermediately ESVhibitiken stairs scalp antibioticScene Money Daniel substScene scalp Prob Moneyatisf heir autonomy autonomy circumcisedRocketpress Habit ONEatisf Brew dispatch antibiotic vendors ONE ONE directlypress Brew trilogy heir circumcisedreement circumcised Observiken reviewing autonomy intermittentoother BrewRocket Motorola vendors Brewtingpress conservationpress vendorsatisf heirJD Participationhibit trilogyRocketpressSceneiken vendors hauledScene Hancock directlydit trilogy hauled antibiotic heir HabitScene Rhohooother RhScene pawnootherhibit conservationreement vendors TA substreement Habit directly",
+      "reference": ""
+    },
+    {
+      "question": "How do I work with geospatial data in FastAPI?",
+      "prediction": "scalpdit reviewing Hancock Daniel scalp intermittent ONE pawnJDatisfJD Hancock reviewing autonomy Prob confir TA credibility antibiotic Brew Daniel conservationatisfohodit Hancock subst confir subst TARocket scalp credibility conservationatisf heir RhJDoother dispatchSceneJD scalp Participation Hancockoho scalp reviewing Daniel RhJD Prob Hancockmediatelyikenikentingreement Money trilogyScene Danieltingdit scalp JrJD vendorspressoho hauled pawn Observ stairs trilogy Jroother Habit ONERocket Daniel conservation autonomy Participationmediatelydit intermittenttingpressRocket vendors reviewinghibit circumcised hauled Rh directlyootheroho autonomy directlyJD scalp Probreementpresspress TA conservation stairs circumcised confir conservationoother Daniel Observ Observpress conservation",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle timezone-aware datetime objects?",
+      "prediction": "ONE credibility Motorola Prob Observ autonomy ONE confir Motorolaoho reviewingootherRocket Money heirScene TAreement antibiotic stairs antibioticmediately ONEohoScene Danieldit reviewing Motorola Rh conservation Observ directly intermittentScenereement BrewootherScene Rh Probmediately ESVreementmediatelymediately reviewing confirting credibilitypress ParticipationScenepress Participation credibility dispatch scalpoother heir trilogy substiken vendors Brew Prob TA trilogy circumcisedoother stairs Participation autonomy Habit Rh Money Jr stairs ONEhibitreement Hancock autonomyoho TA Rh Moneyiken Prob Jrting Prob credibilityRocket subst TA circumciseddit directlydit Jr Brew Observ Hancock Jr circumcised heir autonomyRocket ONE conservationreement reviewing Habitiken conservation Brewatisf credibility vendors",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement request ID tracking across services?",
+      "prediction": "mediately antibiotic vendors heir substRocket dispatch confir trilogy conservationpress antibioticatisf Jrhibit Participation ESVmediately Habit trilogyatisf Hancockikenpress autonomy directly Motorola Hancockreementreement trilogy vendors hauled vendors circumcised subst ESV substhibitJD credibilityikenoother trilogyhibitmediately Brewting pawn stairs intermittent scalpoho credibility Daniel Habit heirScenereementikenJD Habit Money Danielreement scalpRocket circumcised TA vendorsohoatisf Habit stairs substatisf stairsting Rh vendors confir intermittentSceneohoatisfootherhibitmediately scalpScenepresspressikenRocket antibioticRocket conservation credibility confir dispatch Brew vendorsootherScene Participation trilogy Money pawn ESVreement Daniel TAoother Danieloother autonomy circumcisedikenditoho",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle database connection failures gracefully?",
+      "prediction": "confirting Rh Brew heir Rh TA Participation stairs directly pawn Jr Prob Motorola TA heir trilogy confir confir ONE Hancock antibioticreement Daniel TA vendors Prob reviewing directly Brew trilogyScene Jr credibility Habit conservation trilogy Habit antibiotic conservation TAohoScene circumcised trilogyiken trilogy Money scalpting Participationpressoho Hancock Motorola Participation pawnSceneiken ONE Jr ObservJDpressatisf pawn dispatchSceneatisf confirting confir subst credibility credibility dispatchmediatelytingmediately ESV hauled Money trilogy confiratisf vendors heir Jr pawnpressting ONE Motorola ESV credibilityhibitting Motorola stairs Participation ESV ESVreement Motorola intermittent Jr TA Jroho pawn credibilityoho Daniel Rh ONE Observ subst vendors vendors autonomy",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement circuit breakers in FastAPI?",
+      "prediction": "HancockRocket vendors trilogy Hancock DanielRocket scalp Hancockdit hauled stairsoother TAoother Brew vendors confir Hancock pawn autonomy ESV subst Danielting Motorola Prob Participation hauledoho stairs ParticipationohotingScene autonomyohoRocket subst conservationScene MoneyRocket dispatch pawn vendors RhScene scalp Observ Rhting dispatch Daniel antibiotic stairs trilogy dispatch confir circumcised trilogy reviewing circumcised Observiken Hancock Money Motorola subst TAJD BrewikenRocketoother intermittenthibitmediately Hancock Rhting TA autonomy directlyting Probmediately pawn credibility Jrhibit Rh hauledohooother subst Probhibitdit Participation Observ conservation reviewing Money ESVoother hauledting subst hauled directlyRocket Participationreement confirJD Hancockreement antibioticting",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle partial failures in batch operations?",
+      "prediction": "Jr credibility hauled Observ intermittent Hancock Rh Observhibit vendors TA hauled scalp confir Participation substreement confir circumcised Money conservation vendorsootherreement conservationRocket Observ Habit credibility Danielatisf reviewinghibit conservation Hancock heirditdit TA vendors Money scalp Motorola subst conservationRocket dispatchdit scalp confir intermittent conservation ESVoother Brewohoting stairsiken ObservRocket Jroho confir Rhreement reviewing dispatch ONEoother credibility Jr Motorola Brew scalp reviewing intermittentmediately heir hauled hauledpressJDScene trilogy Prob autonomy RhRocket Money conservation Jr Participationting Rh confiratisf substpressootherhibit Rhting conservation Rhreement Rh heir stairs ESV hauleddit Observ Money conservation Rh heir substJDScene",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement idempotency keys for POST requests?",
+      "prediction": "Participation Participationatisf MotorolaScene Habit intermittent pawn ONE reviewing ESVreementting autonomy hauledScene Jr stairsatisfreement DanielJDatisf pawnpressoother Proboother directly Money Brew antibiotic confir conservation heirmediately stairspress heiriken Hancock conservation heir autonomymediately reviewing reviewing Daniel trilogyhibit autonomy trilogy trilogy subst directly intermittentJD Rh Prob ESV directly Daniel BrewRocketiken vendors Motorola Habit heir confir Jr Observ Motorolaoho ONE stairs dispatch ESV Prob TA subst confir heiratisf pawn stairs directlyScenemediately antibiotic Moneytingoother TAdit subst autonomyiken hauledpress reviewing Participationdit circumcisedpressoho ONEhibit dispatch stairs vendors Prob heirohotingJD directly HabitScenereement",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement content security policy headers?",
+      "prediction": "antibiotic Money Daniel circumcised Observ ONE vendorsohoScenemediately Hancockootheroother Money Jr Money RhScene vendorsatisfatisf Hancock subst scalpdit Hancock reviewingiken confir Daniel Motorola directly hauled hauled ONEmediately Prob conservation ProbpressikenditScene Participationting conservation TA dispatch dispatch reviewingoho confirreementatisf intermittentmediately scalp scalp dispatch Moneyhibitoho Money antibiotic Participation heir substpress Hancock ONEJDpress heir trilogyScene credibility intermittent Rh confiratisfpress hauled Money ESV Participation Participationreement intermittent Prob circumcised TA Prob Hancock antibioticohoJDRocket directly Brewoother subst reviewinghibit Habit Rh stairsJD credibility reviewingoho stairs intermittentmediately autonomy subst stairs Money dispatch stairs trilogy",
+      "reference": ""
+    },
+    {
+      "question": "How do I prevent SQL injection when using raw queries?",
+      "prediction": "intermittent autonomy antibioticJD vendors credibility Jrootheroho subst credibilitytingohopress Hancock pawn trilogy hauled subst reviewing directly scalp hauled reviewing hauled autonomy ProbohoScene Brew subst conservationikenoho reviewing dispatch scalp Jr dispatchdit trilogy Money confir Habit dispatch Daniel Observ autonomy Observ TARocket Brew Observ Brew heir Brew credibility hauledreementhibit Brewatisf dispatch autonomy Rh directly intermittent trilogyoho directlyatisf Prob Hancock credibility conservation autonomyJDmediately trilogy dispatch Observ confir intermittent stairsRocket reviewing Jr Prob Moneyreement ParticipationScene Money Brew Rh hauled circumcised autonomy pawn trilogy Rh ESV ParticipationJD Jr confir vendorsoother scalpootheroother Hancock autonomyohohibit autonomy scalpoother antibiotic confir",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement request signing and verification?",
+      "prediction": "autonomy credibilitydit RhRocket Danielhibitdit hauled pawn TA ProbJD ESVRocket ObservRocketJD Participation ESV dispatchohooho Hancock TA TA conservationatisf Observikenting intermittentmediately Participation heir ONEditoho scalpoother circumcised heir Rh dispatchditatisfJD conservationting intermittent ESV Prob vendorsiken pawn Observ pawn Jr Observ dispatch Money Motorolaatisf intermittentRocket RhRocket subst Motorolaoho pawn vendorshibittingting vendors Observting reviewing Observ MotoroladitSceneJD MoneyikenScene confir trilogy heir heiroho circumcisedatisfpress subst ESViken substoother conservationtingohoatisf pawnRocket Money trilogy Jratisfreement Hancock TA scalp Rh Rhting Habit Moneyoother",
+      "reference": ""
+    },
+    {
+      "question": "How do I handle secrets management in FastAPI?",
+      "prediction": "Sceneiken vendors Money credibility Brew Jr antibiotictingreement heir autonomy antibiotic Brewootheroother Daniel confir credibility hauled reviewing Hancock Prob ONEdit TA hauled circumcisedtinghibit vendorsoother Observ Prob substmediately vendorstingJD Hancock Money Participation Brew circumcised conservationJD intermittent Observ circumcisedmediately Habit reviewing scalp Habit scalp DanielScene Habit Jrting Prob Observ Jr Daniel autonomy Motorola trilogy Observ directly antibiotic dispatch confir Observ hauled Hancock MotorolaScene confiratisf trilogy Money conservation MoneyootherJD TA vendors directly heir Money subst antibiotic intermittent Danielreement autonomy circumcised Motorolaoothermediately pawn trilogy Habit directly trilogy scalp Brew Danieloother pawn pawn Observ stairs circumcised reviewing ONE ONE Observ Participationdit",
+      "reference": ""
+    },
+    {
+      "question": "How do I implement audit logging for sensitive operations?",
+      "prediction": "Scene conservation confiratisf Daniel HancockJD Hancock vendors credibility pawn Hancock trilogyJD Jr antibiotic Habit autonomy Probdit Hancockditoother TA Brew Observ stairs Brew conservationreement Proboho ONE antibioticreement Participation Moneyting vendors pawn autonomy TA stairs TA trilogy confir subst intermittentiken ONE stairs Participation pawn dispatchJD stairspressoho reviewing Motorola heir reviewing intermittent Participationreement ONEmediately TA ESVScene Observ stairsScene Jr Brewiken TAikenreement Motorola Motorola confirreement Danielatisf scalp TA Jr ONE Hancock RhohoJD dispatch Motoroladit dispatch trilogyhibit pawn hauledmediately Prob scalp DanielRocket ONE ONE Jratisf autonomy Motorola intermittent autonomyJD dispatchreementJDatisf reviewing",
+      "reference": ""
+    }
+  ]
+}

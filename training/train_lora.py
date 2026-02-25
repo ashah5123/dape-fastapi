@@ -208,8 +208,11 @@ def main():
         if torch.cuda.is_available():
             print(f"✓ CUDA available: {torch.cuda.get_device_name(0)}")
             args.device_map = "cuda"
+        elif getattr(torch.backends, "mps", None) and torch.backends.mps.is_available():
+            print("✓ MPS available (Apple Silicon)")
+            args.device_map = "mps"
         else:
-            print("⚠ No CUDA device found, falling back to CPU")
+            print("⚠ No CUDA/MPS device found, falling back to CPU")
             args.device_map = "cpu"
     
     # Ensure output directory
@@ -234,25 +237,16 @@ def main():
     
     print(f"✓ Model loaded: {model.config.name_or_path}")
     
-    # Auto-detect target modules for LoRA
-    # Common patterns: q_proj/v_proj/k_proj/o_proj (LLaMA), query/value/key/output (GPT-2)
-    target_modules = None
-    if hasattr(model, "model"):
-        # Check for common attention module names
-        model_modules = [name for name, _ in model.named_modules()]
-        if any("q_proj" in name for name in model_modules):
-            target_modules = ["q_proj", "v_proj", "k_proj", "o_proj"]
-        elif any("query" in name.lower() for name in model_modules):
-            target_modules = ["c_attn", "c_proj"]  # GPT-2 style
-        elif any("attn" in name.lower() for name in model_modules):
-            # Try to find attention layers
-            target_modules = ["c_attn", "c_proj"]
+    # Select LoRA target modules based on model type
+    model_type = getattr(model.config, "model_type", "") or ""
+    if model_type == "gpt2":
+        target_modules = ["c_attn", "c_proj"]
+    elif model_type in ["llama", "mistral"]:
+        target_modules = ["q_proj", "k_proj", "v_proj", "o_proj"]
+    else:
+        target_modules = ["q_proj", "v_proj"]
     
-    if target_modules is None:
-        print("⚠ Could not auto-detect target modules, using default")
-        target_modules = ["q_proj", "v_proj", "k_proj", "o_proj"]
-    
-    print(f"   Target modules: {target_modules}")
+    print(f"Using LoRA target modules: {target_modules}")
     
     # Configure LoRA
     print(f"🔧 Configuring LoRA (r={args.lora_r}, alpha={args.lora_alpha})...")
@@ -306,7 +300,7 @@ def main():
         logging_steps=10,
         save_steps=500,
         save_total_limit=2,
-        report_to=None,  # No wandb/tensorboard
+        report_to="none",  # No wandb/tensorboard (zero-cost)
         remove_unused_columns=False,
     )
     

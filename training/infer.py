@@ -20,9 +20,20 @@ from peft import PeftModel
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
-def load_model_and_tokenizer(model_dir: str, base_model_name: str = None):
+def load_model_and_tokenizer(model_dir: str, base_model_name: str = None, device: str = "cpu"):
     """Load model and tokenizer, with optional LoRA adapter."""
     model_dir_path = Path(model_dir)
+    
+    # Resolve device: use MPS only if requested and available, else CPU
+    if device == "mps":
+        mps_available = getattr(torch.backends, "mps", None) and torch.backends.mps.is_available()
+        if not mps_available:
+            print("⚠ MPS requested but not available, using CPU")
+            device = "cpu"
+        else:
+            device = "mps"
+    else:
+        device = "cpu"
     
     # Determine base model
     if base_model_name:
@@ -46,7 +57,7 @@ def load_model_and_tokenizer(model_dir: str, base_model_name: str = None):
     
     model = AutoModelForCausalLM.from_pretrained(
         base_model,
-        device_map="auto",
+        device_map="cpu",
         torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
         trust_remote_code=True
     )
@@ -61,6 +72,8 @@ def load_model_and_tokenizer(model_dir: str, base_model_name: str = None):
     else:
         print("⚠ No adapter found, using base model only")
     
+    model.to(device)
+    print(f"✓ Model on device: {device}")
     return model, tokenizer
 
 
@@ -73,13 +86,13 @@ def generate(
     top_p: float = 0.9,
 ):
     """Generate text from prompt."""
+    device = next(model.parameters()).device
     # Format prompt
     formatted_prompt = f"### Instruction:\n{prompt}\n\n### Response:\n"
     
-    # Tokenize
+    # Tokenize and move inputs to same device as model
     inputs = tokenizer(formatted_prompt, return_tensors="pt")
-    if torch.cuda.is_available():
-        inputs = {k: v.cuda() for k, v in inputs.items()}
+    inputs = {k: v.to(device) for k, v in inputs.items()}
     
     # Generate
     with torch.no_grad():
@@ -156,6 +169,14 @@ def main():
         help="Optional CSV file to save outputs"
     )
     
+    parser.add_argument(
+        "--device",
+        type=str,
+        choices=["cpu", "mps"],
+        default="cpu",
+        help="Device for inference (default: cpu for reliable macOS behavior)"
+    )
+    
     args = parser.parse_args()
     
     print("=" * 60)
@@ -164,7 +185,7 @@ def main():
     print()
     
     # Load model
-    model, tokenizer = load_model_and_tokenizer(args.model_dir, args.base_model)
+    model, tokenizer = load_model_and_tokenizer(args.model_dir, args.base_model, args.device)
     
     # Generate
     print(f"💬 Prompt: {args.prompt}")

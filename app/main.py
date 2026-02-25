@@ -7,6 +7,7 @@ Usage:
     uvicorn app.main:app --host 0.0.0.0 --port 8000
 """
 
+import os
 import time
 from pathlib import Path
 from typing import Optional
@@ -18,10 +19,23 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from app.schema import GenerateRequest, GenerateResponse
 
-# Global model and tokenizer
+# Global model, tokenizer, and device (cpu by default for stable macOS)
 model = None
 tokenizer = None
 model_loaded = False
+device = "cpu"
+
+
+def _resolve_device() -> str:
+    """Resolve device from DAPE_DEVICE env (default: cpu). MPS only if requested and available."""
+    requested = os.environ.get("DAPE_DEVICE", "cpu").lower().strip()
+    if requested == "mps":
+        mps_available = getattr(torch.backends, "mps", None) and torch.backends.mps.is_available()
+        if not mps_available:
+            print("⚠ DAPE_DEVICE=mps but MPS not available, using CPU")
+            return "cpu"
+        return "mps"
+    return "cpu"
 
 app = FastAPI(
     title="DAPE - Domain-Adaptive PEFT Engine",
@@ -32,7 +46,10 @@ app = FastAPI(
 
 def load_model(adapter_dir: str = "runs/lora_adapter", base_model: str = None):
     """Load model and adapter at startup."""
-    global model, tokenizer, model_loaded
+    global model, tokenizer, model_loaded, device
+    
+    device = _resolve_device()
+    print(f"✓ Using device: {device}")
     
     adapter_path = Path(adapter_dir)
     
@@ -57,7 +74,7 @@ def load_model(adapter_dir: str = "runs/lora_adapter", base_model: str = None):
         
         model = AutoModelForCausalLM.from_pretrained(
             base_model_name,
-            device_map="auto",
+            device_map="cpu",
             torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
             trust_remote_code=True
         )
@@ -74,6 +91,7 @@ def load_model(adapter_dir: str = "runs/lora_adapter", base_model: str = None):
         else:
             print("⚠ No adapter found, using base model only")
         
+        model.to(device)
         model.eval()  # Set to evaluation mode
         model_loaded = True
         print("✓ Model loaded successfully")
@@ -102,10 +120,9 @@ def generate_text(prompt: str, max_new_tokens: int = 256) -> str:
     # Format prompt
     formatted_prompt = f"### Instruction:\n{prompt}\n\n### Response:\n"
     
-    # Tokenize
+    # Tokenize and move inputs to same device as model
     inputs = tokenizer(formatted_prompt, return_tensors="pt")
-    if torch.cuda.is_available():
-        inputs = {k: v.cuda() for k, v in inputs.items()}
+    inputs = {k: v.to(device) for k, v in inputs.items()}
     
     # Generate
     with torch.no_grad():
