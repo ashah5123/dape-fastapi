@@ -145,32 +145,31 @@ def generate_text(prompt: str, max_new_tokens: int = 256) -> str:
     
     # Format prompt
     messages = [
-    {"role": "system", "content": "You are a helpful FastAPI documentation assistant. Answer with concise, correct Python code examples when useful."},
-    {"role": "user", "content": prompt},
-]
+        {"role": "system", "content": "You are a helpful FastAPI documentation assistant. Answer with concise, correct Python code examples when useful."},
+        {"role": "user", "content": prompt},
+    ]
 
-formatted_prompt = tokenizer.apply_chat_template(
-    messages,
-    tokenize=False,
-    add_generation_prompt=True,
-)
+    formatted_prompt = tokenizer.apply_chat_template(
+        messages,
+        tokenize=False,
+        add_generation_prompt=True,
+    )
 
-inputs = tokenizer(formatted_prompt, return_tensors="pt")
-
+    inputs = tokenizer(formatted_prompt, return_tensors="pt")
     inputs = {k: v.to(device) for k, v in inputs.items()}
     
     # Generate
     with torch.no_grad():
         outputs = model.generate(
-        **inputs,
-        max_new_tokens=max_new_tokens,
-        do_sample=False,
-        temperature=0.0,
-        repetition_penalty=1.1,
-        no_repeat_ngram_size=4,
-        pad_token_id=tokenizer.eos_token_id,
-        eos_token_id=tokenizer.eos_token_id,
-    )
+            **inputs,
+            max_new_tokens=max_new_tokens,
+            do_sample=False,
+            temperature=0.0,
+            repetition_penalty=1.1,
+            no_repeat_ngram_size=4,
+            pad_token_id=tokenizer.eos_token_id,
+            eos_token_id=tokenizer.eos_token_id,
+        )
     
     # Decode
     generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
@@ -184,10 +183,15 @@ inputs = tokenizer(formatted_prompt, return_tensors="pt")
     return response
 
 
-@app.get("/")
-async def root():
-    """Root endpoint: redirect to the Gradio UI."""
-    return RedirectResponse(url="/ui")
+@app.get("/", include_in_schema=False)
+async def home():
+    """Redirect homepage to the Gradio UI."""
+    # When ROOT_PATH is set (HF proxy), expose UI both at /ui and {root_path}/ui.
+    if root_path:
+        target = root_path.rstrip("/") + "/ui"
+    else:
+        target = "/ui"
+    return RedirectResponse(url=target)
 
 
 @app.get("/health")
@@ -224,7 +228,13 @@ async def generate(request: GenerateRequest):
 
 
 gradio_app = build_ui(generate_text)
+# Always mount at /ui for direct *.hf.space and local development.
 app = gr.mount_gradio_app(app, gradio_app, path="/ui")
+# When ROOT_PATH is set (HF proxy), also mount at {root_path}/ui so that
+# /spaces/<user>/<space>/ui works correctly.
+if root_path:
+    proxy_ui_path = root_path.rstrip("/") + "/ui"
+    app = gr.mount_gradio_app(app, gradio_app, path=proxy_ui_path)
 
 
 if __name__ == "__main__":
