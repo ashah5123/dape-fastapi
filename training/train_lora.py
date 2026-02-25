@@ -237,16 +237,31 @@ def main():
     
     print(f"✓ Model loaded: {model.config.name_or_path}")
     
-    # Select LoRA target modules based on model type
-    model_type = getattr(model.config, "model_type", "") or ""
-    if model_type == "gpt2":
-        target_modules = ["c_attn", "c_proj"]
-    elif model_type in ["llama", "mistral"]:
+    # Select LoRA target modules based on actual module names
+    module_names = {name for name, _ in model.named_modules()}
+    target_modules: list[str]
+    reason: str
+
+    # 1) LLaMA / Mistral-style q_proj/k_proj/v_proj/o_proj
+    if any(name.endswith("q_proj") or ".q_proj" in name for name in module_names):
         target_modules = ["q_proj", "k_proj", "v_proj", "o_proj"]
+        reason = "found q_proj-style attention projection layers"
+    # 2) GPT-2-style c_attn / c_proj
+    elif any(name.endswith("c_attn") for name in module_names):
+        target_modules = ["c_attn", "c_proj"]
+        reason = "found GPT-2-style c_attn projection layers"
+    # 3) Qwen-style Wqkv / out_proj
+    elif any("Wqkv" in name for name in module_names) and any(
+        "out_proj" in name for name in module_names
+    ):
+        target_modules = ["Wqkv", "out_proj"]
+        reason = "found Qwen-style Wqkv/out_proj projection layers"
+    # 4) Fallback: generic q_proj / v_proj
     else:
         target_modules = ["q_proj", "v_proj"]
+        reason = "fallback to generic q_proj/v_proj projections"
     
-    print(f"Using LoRA target modules: {target_modules}")
+    print(f"Using LoRA target modules: {target_modules} (reason: {reason})")
     
     # Configure LoRA
     print(f"🔧 Configuring LoRA (r={args.lora_r}, alpha={args.lora_alpha})...")

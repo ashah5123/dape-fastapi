@@ -142,63 +142,144 @@ def exact_match(pred: str, ref: str) -> bool:
     return pred.strip().lower() == ref.strip().lower()
 
 
-def compute_metrics(predictions: List[str], references: List[str]) -> Dict:
-    """Compute evaluation metrics."""
+FASTAPI_KEYWORDS = [
+    "fastapi",
+    "FastAPI",
+    "@app.get",
+    "@router.get",
+    "APIRouter",
+    "Depends",
+    "pydantic",
+    "uvicorn",
+    "Request",
+]
+
+
+def _contains_code_block(text: str) -> int:
+    """Return 1 if the text contains a markdown code block, else 0."""
+    return 1 if "```" in text else 0
+
+
+def _fastapi_keyword_score(text: str) -> float:
+    """Compute normalized FastAPI keyword score based on presence of known tokens."""
+    if not text:
+        return 0.0
+    count = sum(1 for kw in FASTAPI_KEYWORDS if kw in text)
+    return count / len(FASTAPI_KEYWORDS)
+
+
+def _cosine_similarity(a, b) -> float:
+    """Cosine similarity between two vectors."""
+    from numpy import dot
+    from numpy.linalg import norm
+
+    denom = (norm(a) * norm(b))
+    if denom == 0:
+        return 0.0
+    return float(dot(a, b) / denom)
+
+
+def compute_example_metrics(
+    question: str,
+    base_output: str,
+    ft_output: str,
+    encoder: "SentenceTransformer | None" = None,
+) -> Dict:
+    """Compute metrics for a single example comparing base vs fine-tuned outputs."""
     metrics = {
-        "exact_matches": 0,
-        "keyword_overlaps": [],
-        "length_differences": [],
-        "semantic_similarities": [],
+        "contains_code_block": {},
+        "fastapi_keyword_score": {},
+        "question_relevance": {},
     }
-    
-    # Exact match
-    for pred, ref in zip(predictions, references):
-        if ref:  # Only if reference exists
-            metrics["exact_matches"] += exact_match(pred, ref)
-    
-    # Keyword overlap (Jaccard)
-    for pred, ref in zip(predictions, references):
-        pred_tokens = tokenize(pred)
-        ref_tokens = tokenize(ref) if ref else set()
-        overlap = jaccard_similarity(pred_tokens, ref_tokens)
-        metrics["keyword_overlaps"].append(overlap)
-    
-    # Length difference
-    for pred, ref in zip(predictions, references):
-        pred_len = len(pred.split())
-        ref_len = len(ref.split()) if ref else 0
-        diff = abs(pred_len - ref_len)
-        metrics["length_differences"].append(diff)
-    
-    # Semantic similarity (if available)
-    if HAS_SENTENCE_TRANSFORMERS and references:
-        print("📊 Computing semantic similarities...")
+
+    # Contains code block
+    base_cb = _contains_code_block(base_output)
+    ft_cb = _contains_code_block(ft_output)
+    metrics["contains_code_block"] = {
+        "base": base_cb,
+        "ft": ft_cb,
+        "delta": ft_cb - base_cb,
+    }
+
+    # FastAPI keyword score
+    base_kw = _fastapi_keyword_score(base_output)
+    ft_kw = _fastapi_keyword_score(ft_output)
+    metrics["fastapi_keyword_score"] = {
+        "base": base_kw,
+        "ft": ft_kw,
+        "delta": ft_kw - base_kw,
+    }
+
+    # Question relevance via semantic similarity (optional)
+    base_rel = None
+    ft_rel = None
+    if encoder is not None and question and (base_output or ft_output):
         try:
-            encoder = SentenceTransformer('all-MiniLM-L6-v2')
-            pred_embeddings = encoder.encode(predictions)
-            ref_embeddings = encoder.encode([r if r else "" for r in references])
-            
-            from numpy import dot
-            from numpy.linalg import norm
-            
-            for pred_emb, ref_emb in zip(pred_embeddings, ref_embeddings):
-                similarity = dot(pred_emb, ref_emb) / (norm(pred_emb) * norm(ref_emb))
-                metrics["semantic_similarities"].append(float(similarity))
+            q_emb = encoder.encode([question])[0]
+            if base_output:
+                base_emb = encoder.encode([base_output])[0]
+                base_rel = _cosine_similarity(q_emb, base_emb)
+            if ft_output:
+                ft_emb = encoder.encode([ft_output])[0]
+                ft_rel = _cosine_similarity(q_emb, ft_emb)
         except Exception as e:
-            print(f"⚠ Error computing semantic similarity: {e}")
-    
-    # Aggregate metrics
-    results = {
-        "num_examples": len(predictions),
-        "exact_match_rate": metrics["exact_matches"] / len(predictions) if predictions else 0.0,
-        "avg_keyword_overlap": sum(metrics["keyword_overlaps"]) / len(metrics["keyword_overlaps"]) if metrics["keyword_overlaps"] else 0.0,
-        "avg_length_difference": sum(metrics["length_differences"]) / len(metrics["length_differences"]) if metrics["length_differences"] else 0.0,
-    }
-    
-    if metrics["semantic_similarities"]:
-        results["avg_semantic_similarity"] = sum(metrics["semantic_similarities"]) / len(metrics["semantic_similarities"])
-    
-    return results
+            print(f"⚠ Error computing semantic similarity for example: {e}")
+
+    if base_rel is not None or ft_rel is not None:
+        # If one side is missing, treat missing as 0.0 for delta computation
+        base_val = base_rel if base_rel is not None else 0.0
+        ft_val = ft_rel if ft_rel is not None else 0.0
+        metrics["question_relevance"] = {
+            "base": base_rel,
+            "ft": ft_rel,
+            "delta": ft_val - base_val,
+        }
+    else:
+        metrics["question_relevance"] = {
+            "base": None,
+            "ft": None,
+            "delta": None,
+        }
+
+    return metrics
+
+
+def aggregate_metrics(examples: List[Dict]) -> Dict:
+    """Aggregate metrics over all examples."""
+    sums: Dict[str, Dict[str, float]] = {}
+    counts: Dict[str, int] = {}
+
+    for ex in examples:
+        ex_metrics = ex.get("metrics", {})
+        for metric_name, vals in ex_metrics.items():
+            if metric_name not in sums:
+                sums[metric_name] = {"base": 0.0, "ft": 0.0, "delta": 0.0}
+                counts[metric_name] = 0
+
+            base_val = vals.get("base")
+            ft_val = vals.get("ft")
+            delta_val = vals.get("delta")
+
+            # Only aggregate when base/ft are not None (for relevance metric)
+            if base_val is not None and ft_val is not None and delta_val is not None:
+                sums[metric_name]["base"] += float(base_val)
+                sums[metric_name]["ft"] += float(ft_val)
+                sums[metric_name]["delta"] += float(delta_val)
+                counts[metric_name] += 1
+
+    averages: Dict[str, Dict[str, float]] = {}
+    for metric_name, total_vals in sums.items():
+        count = counts.get(metric_name, 0)
+        if count == 0:
+            continue
+        averages[metric_name] = {
+            "base": total_vals["base"] / count,
+            "ft": total_vals["ft"] / count,
+            "delta": total_vals["delta"] / count,
+            "count": count,
+        }
+
+    return averages
 
 
 def main():
@@ -259,42 +340,68 @@ def main():
     benchmark = load_benchmark(args.benchmark_path)
     print(f"✓ Loaded {len(benchmark)} questions")
     
-    # Load model
-    model_dir = args.adapter_dir if args.adapter_dir else args.base_model
-    model, tokenizer = load_model_and_tokenizer(model_dir, args.base_model, args.device)
+    # Load models (base and fine-tuned)
+    print("\n📥 Loading models...")
+    base_model, tokenizer = load_model_and_tokenizer(args.base_model, args.base_model, args.device)
+    ft_model = None
+    if args.adapter_dir:
+        ft_model, _ = load_model_and_tokenizer(args.adapter_dir, args.base_model, args.device)
+    else:
+        print("⚠ No adapter_dir provided, fine-tuned outputs will match base model.")
+    
+    # Optional semantic encoder
+    encoder = None
+    if HAS_SENTENCE_TRANSFORMERS:
+        try:
+            print("📥 Loading sentence-transformers encoder (all-MiniLM-L6-v2)...")
+            encoder = SentenceTransformer("all-MiniLM-L6-v2")
+        except Exception as e:
+            print(f"⚠ Error loading sentence-transformers encoder, skipping semantic relevance: {e}")
+            encoder = None
     
     # Generate predictions
-    print("\n🤖 Generating predictions...")
-    predictions = []
-    references = []
+    print("\n🤖 Generating predictions (base vs fine-tuned)...")
+    examples: List[Dict] = []
     
     for i, item in enumerate(benchmark):
         question = item.get("question", "")
-        reference = item.get("reference", "")
         
         if not question:
             continue
         
         print(f"  [{i+1}/{len(benchmark)}] {question[:60]}...")
-        response = generate_response(model, tokenizer, question, args.max_new_tokens)
-        predictions.append(response)
-        references.append(reference)
+        base_output = generate_response(base_model, tokenizer, question, args.max_new_tokens)
+        if ft_model is not None:
+            ft_output = generate_response(ft_model, tokenizer, question, args.max_new_tokens)
+        else:
+            ft_output = base_output
+        
+        ex_metrics = compute_example_metrics(question, base_output, ft_output, encoder)
+        examples.append(
+            {
+                "question": question,
+                "base_output": base_output,
+                "ft_output": ft_output,
+                "metrics": ex_metrics,
+            }
+        )
     
-    # Compute metrics
-    print("\n📈 Computing metrics...")
-    results = compute_metrics(predictions, references)
+    # Aggregate metrics
+    print("\n📈 Computing aggregate metrics...")
+    averages = aggregate_metrics(examples)
     
-    # Add predictions to results
-    results["predictions"] = [
-        {"question": item.get("question"), "prediction": pred, "reference": ref}
-        for item, pred, ref in zip(benchmark[:len(predictions)], predictions, references)
-    ]
+    # Prepare results payload
+    results = {
+        "num_examples": len(examples),
+        "averages": averages,
+        "examples": examples,
+    }
     
     # Save results
     output_path = Path(args.output_path)
     ensure_dir(output_path.parent)
     
-    with open(output_path, 'w', encoding='utf-8') as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     
     print()
@@ -302,11 +409,12 @@ def main():
     print("Evaluation Results")
     print("=" * 60)
     print(f"Examples evaluated: {results['num_examples']}")
-    print(f"Exact match rate: {results['exact_match_rate']:.3f}")
-    print(f"Avg keyword overlap: {results['avg_keyword_overlap']:.3f}")
-    print(f"Avg length difference: {results['avg_length_difference']:.1f}")
-    if 'avg_semantic_similarity' in results:
-        print(f"Avg semantic similarity: {results['avg_semantic_similarity']:.3f}")
+    for metric_name, vals in averages.items():
+        print(
+            f"{metric_name}: "
+            f"base={vals['base']:.3f}, ft={vals['ft']:.3f}, delta={vals['delta']:.3f} "
+            f"(count={vals['count']})"
+        )
     print(f"\nResults saved to: {output_path}")
     print("=" * 60)
 
