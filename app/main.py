@@ -14,16 +14,22 @@ from typing import Optional
 
 import torch
 from fastapi import FastAPI, HTTPException
+from huggingface_hub import hf_hub_download
 from peft import PeftModel
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from app.schema import GenerateRequest, GenerateResponse
 
-# Global model, tokenizer, and device (cpu by default for stable macOS)
+# Global model, tokenizer, and device (cpu by default for stable macOS / Spaces)
 model = None
 tokenizer = None
 model_loaded = False
 device = "cpu"
+
+# Adapter / base-model configuration (overridable via env on Spaces)
+DAPE_ADAPTER_REPO = os.getenv("DAPE_ADAPTER_REPO", "ashah5123/dape-fastapi-adapter")
+DAPE_ADAPTER_DIR = os.getenv("DAPE_ADAPTER_DIR", "./adapter")
+DAPE_BASE_MODEL = os.getenv("DAPE_BASE_MODEL", "Qwen/Qwen2.5-0.5B-Instruct")
 
 
 def _resolve_device() -> str:
@@ -37,65 +43,86 @@ def _resolve_device() -> str:
         return "mps"
     return "cpu"
 
+
+root_path = os.getenv("ROOT_PATH", "")
+
 app = FastAPI(
     title="DAPE - Domain-Adaptive PEFT Engine",
     description="FastAPI documentation assistant powered by fine-tuned language models",
-    version="1.0.0"
+    version="1.0.0",
+    root_path=root_path,
 )
 
 
-def load_model(adapter_dir: str = "runs/lora_adapter", base_model: str = None):
-    """Load model and adapter at startup."""
+def load_model() -> None:
+    """Load base model and LoRA adapter (from HF Hub) at startup."""
     global model, tokenizer, model_loaded, device
-    
+
     device = _resolve_device()
     print(f"✓ Using device: {device}")
-    
+
+    base_model_name = DAPE_BASE_MODEL
+    adapter_repo = DAPE_ADAPTER_REPO
+    adapter_dir = DAPE_ADAPTER_DIR
     adapter_path = Path(adapter_dir)
-    
-    # Determine base model
-    if base_model:
-        base_model_name = base_model
-    elif adapter_path.exists() and (adapter_path / "adapter_config.json").exists():
-        import json
-        with open(adapter_path / "adapter_config.json", 'r') as f:
-            config = json.load(f)
-            base_model_name = config.get("base_model_name_or_path", "microsoft/DialoGPT-small")
-    else:
-        base_model_name = "microsoft/DialoGPT-small"
-    
+    adapter_path.mkdir(parents=True, exist_ok=True)
+
     print(f"📥 Loading base model: {base_model_name}")
-    
+    print(f"📥 Adapter repo: {adapter_repo}")
+    print(f"📁 Local adapter dir: {adapter_path}")
+
     try:
+        # Load tokenizer and base model
         tokenizer = AutoTokenizer.from_pretrained(base_model_name)
-        
+
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
-        
+
         model = AutoModelForCausalLM.from_pretrained(
             base_model_name,
             device_map="cpu",
             torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
-            trust_remote_code=True
+            trust_remote_code=True,
         )
-        
-        # Load adapter if exists
-        if adapter_path.exists() and (
-            (adapter_path / "adapter_model.safetensors").exists() or
-            (adapter_path / "adapter_model.bin").exists()
-        ):
-            print(f"📥 Loading adapter from: {adapter_dir}")
-            model = PeftModel.from_pretrained(model, str(adapter_path))
-            model = model.merge_and_unload()
-            print("✓ Adapter loaded and merged")
-        else:
-            print("⚠ No adapter found, using base model only")
-        
+
+        # Try to download adapter from HF Hub
+        adapter_loaded = False
+        try:
+            print("📥 Downloading adapter files from Hugging Face Hub...")
+            hf_hub_download(
+                repo_id=adapter_repo,
+                filename="adapter_config.json",
+                local_dir=str(adapter_path),
+            )
+            hf_hub_download(
+                repo_id=adapter_repo,
+                filename="adapter_model.safetensors",
+                local_dir=str(adapter_path),
+            )
+
+            if (adapter_path / "adapter_config.json").exists() and (
+                (adapter_path / "adapter_model.safetensors").exists()
+                or (adapter_path / "adapter_model.bin").exists()
+            ):
+                print("📥 Loading adapter from local directory...")
+                model = PeftModel.from_pretrained(model, str(adapter_path))
+                model = model.merge_and_unload()
+                adapter_loaded = True
+                print("✓ Adapter loaded and merged")
+            else:
+                print("⚠ Adapter files not found after download; using base model only")
+        except Exception as e:
+            print(f"⚠ Failed to download or load adapter from HF Hub: {e}")
+            print("   Falling back to base model only.")
+
         model.to(device)
         model.eval()  # Set to evaluation mode
         model_loaded = True
-        print("✓ Model loaded successfully")
-        
+        if adapter_loaded:
+            print("✓ Model + adapter loaded successfully")
+        else:
+            print("✓ Base model loaded successfully (no adapter)")
+
     except Exception as e:
         print(f"✗ Error loading model: {e}")
         raise
@@ -103,13 +130,9 @@ def load_model(adapter_dir: str = "runs/lora_adapter", base_model: str = None):
 
 @app.on_event("startup")
 async def startup_event():
-    """Load model on startup."""
-    adapter_dir = Path("runs/lora_adapter")
-    if adapter_dir.exists():
-        load_model(str(adapter_dir))
-    else:
-        print("⚠ No adapter directory found. Model will not be loaded.")
-        print("  Run training first or specify adapter directory.")
+    """Load model on startup (HF Spaces-friendly)."""
+    print("🚀 Startup event: loading model...")
+    load_model()
 
 
 def generate_text(prompt: str, max_new_tokens: int = 256) -> str:
