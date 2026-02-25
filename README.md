@@ -16,6 +16,42 @@ The setup is zero-cost: no paid APIs, no paid services, and no external tracking
 
 ---
 
+## Live Demo (Hugging Face Space)
+
+**App URL**  
+https://ashah5123-dape-fastapi.hf.space
+
+**Swagger Docs**  
+https://ashah5123-dape-fastapi.hf.space/docs
+
+For programmatic access, always call the `.hf.space` domain directly.  
+Do not use `https://huggingface.co/spaces/...` URLs for API requests; those are for the web UI only.
+
+Example request:
+
+```bash
+curl -X POST "https://ashah5123-dape-fastapi.hf.space/generate" \
+  -H "Content-Type: application/json" \
+  -d '{"prompt":"FastAPI GET endpoint example","max_new_tokens":120}'
+```
+
+---
+
+## Deployment Architecture
+
+- The Hugging Face Space repository contains only application code (FastAPI app, training/evaluation scripts, configuration).
+- LoRA adapter weights are stored in a separate model repository: `ashah5123/dape-fastapi-adapter`.
+- At runtime, the Space downloads adapter weights from the model repository using `huggingface_hub` (`hf_hub_download`).
+- No binary model weights are committed to the Space repository; only configuration and source code live in the Space.
+- Deployment runs entirely on Hugging Face CPU infrastructure for reproducibility and zero-cost usage.
+- The system is configured via environment variables:
+  - `DAPE_BASE_MODEL` – base model to load (e.g. `Qwen/Qwen2.5-0.5B-Instruct`).
+  - `DAPE_ADAPTER_REPO` – Hugging Face Hub repo ID for the LoRA adapter (default `ashah5123/dape-fastapi-adapter`).
+  - `DAPE_DEVICE` – inference device (`cpu` by default; `mps` is optional on macOS where available).
+  - `ROOT_PATH` – FastAPI `root_path` for correct routing on Spaces (used for `/docs` and API paths).
+
+---
+
 ## Project Architecture
 
 End-to-end pipeline:
