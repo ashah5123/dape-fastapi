@@ -18,3 +18,8 @@ data/processed/
 # HF Spaces: include adapter assets
 !adapter/
 !adapter/**
+
+# local artifacts
+adapter/adapter_model.safetensors
+data/dataset_200.jsonl
+evaluation/results_qwen_smoke.json
